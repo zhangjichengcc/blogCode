@@ -1,13 +1,10 @@
 ---
 title: 给Hexo博客添加访问统计
 date: 2018-09-27 16:35:58
-categories: HEXO方法总结
+categories: 工具
 tags: hexo
 thumbnail: http://busuanzi.ibruce.info/images/garlic.png
 ---
-
-![你想要输入的替代文字](给Hexo博客添加访问统计/timg.jpg)
-<!-- # https://github.com/ppoffice/hexo-theme-icarus/tree/site -->
 
 ### 引入不蒜子
 ``` bash
