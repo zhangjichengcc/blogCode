@@ -1,0 +1,108 @@
+#comments
+	@extend $block
+	padding: article-padding
+	margin: block-margin 0
+	border-top: rgba(0, 0, 0, 0.05) solid 2px
+	a
+	   color: color-link
+	// valine 评论系统样式
+	.valine-title
+		font-size: 20px
+		margin-bottom: 10px
+		.valine-title-info
+			font-size: 12px
+			color: #aaa
+		.fa-write
+			&:before
+				content: "\f27a"
+			margin-right: 5px
+			font-size: 17px
+	#valine-thread
+		.vwrap
+			border-radius: 10px
+			.vedit
+				// font-size: 13px
+				.veditor
+					font-size: 13px
+		.vcontrol
+			border-top: #eee solid 1px
+			.vident
+				width: 100%
+				.vinput
+					padding: 5px
+					border: #eee
+					border-radius: 5px
+					margin-right: 1%
+					font-size: 13px
+					&:focus
+						border-color: #108ee9
+				.vnick
+					width: 25%
+				.vmail
+					width: 37%
+				.vlink
+					margin-right: 0
+					width: 36%
+			.vright
+				float: right
+				padding: 5px
+				padding-top: 0
+				.vbtn
+					background-color: #108ee9
+					padding: 4px 15px
+					font-size: 12px
+					border-radius: 4px
+					font-weight: 600
+					color: #fff
+					&:hover
+						opacity: .7
+		.info
+			border-bottom: #eee solid 2px
+			.col
+				font-size: 14px
+				.num
+					display: inline-block
+					padding: 0 5px
+			.power
+				display: none
+		.vlist
+			.vcard
+				padding: 10px 0
+				.vhead
+				section
+					padding-left: .625rem
+					h5
+						a
+							color: #2196F3
+							font-size: 14px
+					.vcomment
+						font-size: 13px
+						background: rgba(238, 238, 255, 0.34)
+						padding: 14px
+						a
+							color: #108ee9
+							font-size: 13px
+					.expand
+						&:after
+							content: 'Load More'
+							font-weight: 700
+							background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, .9)), to(rgba(255, 255, 255, 1)))
+							background: linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, 1));
+						&:hover
+							&:after
+								color: #108ee9
+					.vfooter
+						.vtime
+							font-size: 12px
+						.vat
+							display: inline-block
+							// background-color: #108ee9
+							border: #eee
+							color: #aaa
+							font-size: 12px
+							padding: 2px 8px
+							border-radius: 4px
+							font-weight: 700
+							&:hover
+								color: #108ee9
+								border: #108ee9

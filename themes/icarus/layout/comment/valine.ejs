@@ -1,0 +1,26 @@
+<% if (typeof(script) !== 'undefined' && script) { %>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!-- 用本地文件替换 -->
+    <script src="/bolg/js/Valine.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.6/dist/Valine.min.js"></script> -->
+    <script>
+        // import Valine from '../script/Valine.min.js'
+        new Valine({
+            el: '#valine-thread' ,
+            notify: '<%= theme.comment.valine.notify %>',
+            verify: '<%= theme.comment.valine.verify %>',
+            app_id: '<%= theme.comment.valine.appId %>',
+            app_key: '<%= theme.comment.valine.appKey %>',
+            placeholder: '<%= theme.comment.valine.placeholder %>',
+            // avatar: '<%= theme.comment.valine.avatar %>',
+            // guest_info: '<%= theme.comment.valine.guest_info %>',
+            // pageSize: '<%= theme.comment.valine.pageSize %>'
+        });
+    </script>
+<% } else { %>
+    <h2 class="valine-title">
+        <i class="fas fa-write"></i>评论区
+        <span class="valine-title-info">（请完善信息用于邮件接收评论的反馈）</span>
+    </h2>
+    <div id="valine-thread"></div>
+<% } %>
