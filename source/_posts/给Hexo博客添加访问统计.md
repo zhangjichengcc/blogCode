@@ -5,7 +5,8 @@ categories: 工具
 tags: hexo
 thumbnail: http://busuanzi.ibruce.info/images/garlic.png
 ---
-
+导语： 引入不蒜子为你的博客添加访问量
+<!--more-->
 ### 引入不蒜子
 ``` bash
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

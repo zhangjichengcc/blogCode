@@ -10,11 +10,15 @@ thumbnail: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1
 tags: [hexo, markdown, 前端]
 ---
 
+hexo 文章的创建及markdown语法
+<!--more-->
+
 ## hexo 创建文章
 命令行输入：
 ``` bash
 $ hexo new "new article"
 ```
+
 之后在source/_posts目录下面，多了一个new-article.md的文件。
 打开后：
 ``` bash
@@ -152,7 +156,7 @@ banner: /bolg/2018/09/27/hexo-创建文章/banner.jpg
 ### 超链接
 ``` bash
 行内形式：[我的博客](https://zhangjichengcc.github.io/bolg/)
-参考形式：[我的博客][1]，有一个很好的平台-[简书][2]
+参考形式：[我的博客][1]，有一个很好的平台-[GitHub][2]
 [1]:https://kevinpu.github.io/
 [2]:http://www.jianshu.com/
 自动链接：我的博客地址<https://zhangjichengcc.github.io/bolg/>
@@ -230,3 +234,17 @@ banner: /bolg/2018/09/27/hexo-创建文章/banner.jpg
 ``` bash
 ...code 主体
 ```
+
+### 引用
+``` bash
+>这是引用
+这是引用
+这是引用
+>>不！我才是引用
+```
+	效果
+
+>这是引用
+这是引用
+这是引用
+>>不！我才是引用
