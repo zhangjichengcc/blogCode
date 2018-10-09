@@ -3,7 +3,7 @@ title: 给Hexo博客添加访问统计
 date: 2018-09-27 16:35:58
 categories: 工具
 tags: hexo
-thumbnail: http://busuanzi.ibruce.info/images/garlic.png
+thumbnail: /bolg/2018/09/27/给Hexo博客添加访问统计/bsz.jpg
 ---
 导语： 引入不蒜子为你的博客添加访问量
 <!--more-->
