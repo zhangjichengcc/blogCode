@@ -33,4 +33,14 @@ thumbnail: /bolg/2018/09/27/给Hexo博客添加访问统计/bsz.jpg
 </span>
 ```
 
+### 注意
+由于原有的『dn-lbstatics.qbox.me』域名过期，需把原有的：
+``` js
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+```
+域名改为：
+``` js
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+```
+
 参考 : [不蒜子](http://busuanzi.ibruce.info/)
