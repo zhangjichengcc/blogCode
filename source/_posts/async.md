@@ -146,9 +146,9 @@ async function f() {
 
 f().then(v => console.log(v))
 // "hello world"
-上面代码中，函数f内部return命令返回的值，会被then方法回调函数接收到。
+上面代码中，函数f内部`return`命令返回的值，会被then方法回调函数接收到。
 
-async函数内部抛出错误，会导致返回的 Promise 对象变为reject状态。抛出的错误对象会被catch方法回调函数接收到。
+`async`函数内部抛出错误，会导致返回的 Promise 对象变为reject状态。抛出的错误对象会被catch方法回调函数接收到。
 
 async function f() {
   throw new Error('出错了');
