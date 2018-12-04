@@ -1,5 +1,6 @@
 ---
 title: hexo常用指令
+date: 2018-02-05 14:29:09
 comments: true
 toc: true
 categories: "工具"

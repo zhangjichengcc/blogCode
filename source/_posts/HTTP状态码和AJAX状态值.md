@@ -2,7 +2,7 @@
 title: HTTP状态码和AJAX状态值
 date: 2018-11-29 15:01:52
 toc: true
-thumbnail: http://img0.imgtn.bdimg.com/it/u=1235053426,692856008&fm=26&gp=0.jpg
+thumbnail: /bolg/2018/11/29/HTTP状态码和AJAX状态值/http.jpg
 categories: '笔记'
 tags: 
 	- js

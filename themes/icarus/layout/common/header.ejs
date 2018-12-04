@@ -24,7 +24,7 @@
                 </nav>
             <% } %>
             <!-- 暂时隐藏搜索 -->
-            <!-- <%- partial('search/index') %> -->
+            <%- partial('search/index') %>
         </div>
     </div>
     <div id="main-nav-mobile" class="header-sub header-inner">
@@ -34,9 +34,9 @@
                     <td><a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a></td>
                 <% } %>
                 <!-- 暂时隐藏搜索 -->
-                <!-- <td>
+                <td>
                     <%- partial('search/index-mobile') %>
-                </td> -->
+                </td>
             </tr>
         </table>
     </div>

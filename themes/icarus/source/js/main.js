@@ -88,6 +88,7 @@
         checkFixedProfile();
         $(document).on('scroll', function () {
             checkFixedProfile();
+            setLoadingBar();
         });
 
         var isFixedProfile = false;
@@ -120,6 +121,17 @@
                 profileInnerElem.css('animation', 'none');
                 isFixedProfile = false;
             }
+        }
+
+        // 添加头部滚动进度条
+        var bar = document.getElementById('loadingbar');
+        var clientHeight = document.documentElement.offsetHeight || document.body.clientHeight;
+        var bodyHeight = document.body.scrollHeight;
+        function setLoadingBar () {
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var count = scrollTop / (bodyHeight - clientHeight) * 100;
+            var fcount = `${count.toFixed(2)}%`;
+            bar.style.width = fcount;
         }
     })();
 

@@ -1,6 +1,6 @@
 ---
 title: hexo 创建文章 & 文章缩略图及banner & MarkDown
-date: 2018-09-27 14:29:09
+date: 2018-02-27 14:29:09
 comments: true
 toc: true
 categories: "工具"

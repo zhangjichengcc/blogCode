@@ -1,6 +1,6 @@
 ---
 title: 给Hexo博客添加访问统计
-date: 2018-09-27 16:35:58
+date: 2018-03-20 16:35:58
 categories: 工具
 tags: hexo
 thumbnail: /bolg/2018/09/27/给Hexo博客添加访问统计/bsz.jpg
