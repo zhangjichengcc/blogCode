@@ -83,5 +83,5 @@ theme: icarus
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: # 配置发布
   type: git
-  repository: https://github.com/zhangjichengcc/bolg.git
+  repository: https://github.com/zhangjichengcc/bolgCode.git
   branch: master

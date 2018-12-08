@@ -1,5 +1,5 @@
 ---
-title: HTTP状态码和AJAX状态值hexo d
+title: HTTP状态码和AJAX状态值hexo44
 date: 2018-11-29 15:01:52
 toc: true
 thumbnail: /bolg/2018/11/29/HTTP状态码和AJAX状态值/http.jpg
