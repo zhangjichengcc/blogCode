@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>js构造函数 | ZJC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="前言：上篇文章（发布在我的segmentfault上）介绍了js中通过构造函数来实例化对象的各种方法js构造函数，这篇文章主要介绍构造函数的继承（类的继承），同样包括 ES5 和 ES6 两部分的介绍，能力所限，文中难免有不合理或错误的地方，还望批评指正~">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js构造函数">
+<meta property="og:url" content="https://zhangjichengcc.github.io/2018/10/09/js构造函数/index.html">
+<meta property="og:site_name" content="ZJC">
+<meta property="og:description" content="前言：上篇文章（发布在我的segmentfault上）介绍了js中通过构造函数来实例化对象的各种方法js构造函数，这篇文章主要介绍构造函数的继承（类的继承），同样包括 ES5 和 ES6 两部分的介绍，能力所限，文中难免有不合理或错误的地方，还望批评指正~">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zhangjichengcc.github.io/bolg/2018/10/09/js构造函数/banner.jpg">
+<meta property="og:updated_time" content="2018-10-09T09:20:11.831Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js构造函数">
+<meta name="twitter:description" content="前言：上篇文章（发布在我的segmentfault上）介绍了js中通过构造函数来实例化对象的各种方法js构造函数，这篇文章主要介绍构造函数的继承（类的继承），同样包括 ES5 和 ES6 两部分的介绍，能力所限，文中难免有不合理或错误的地方，还望批评指正~">
+<meta name="twitter:image" content="https://zhangjichengcc.github.io/bolg/2018/10/09/js构造函数/banner.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/bolg/css/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/bolg/libs/font-awesome5/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/bolg/libs/font-awesome5/css/fa-brands.min.css">
+    <link rel="stylesheet" href="/bolg/libs/font-awesome5/css/fa-solid.min.css">
+    <link rel="stylesheet" href="/bolg/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/bolg/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/bolg/css/style.css">
+
+    <script src="/bolg/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/bolg/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/bolg/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="loadingbar"></div>
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/bolg/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">ZJC</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/bolg/.">首页</a>
+                
+                    <a class="main-nav-link" href="/bolg/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/bolg/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/bolg/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/bolg/about">关于</a>
+                
+                <!-- 引入Github标签 -->
+                <a href="https://github.com/zhangjichengcc" target="_blank" class="github-corner" aria-label="View source on Github"><svg width="120" height="120" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/bolg/css/images/avatar.jpg" />
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <!-- 暂时隐藏搜索 -->
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fas fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/bolg/',
+        CONTENT_URL: '/bolg/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/bolg/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/bolg/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/bolg/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/bolg/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/bolg/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/bolg/about">关于</a></td>
+                
+                <!-- 暂时隐藏搜索 -->
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile" class="profile-fixed">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/bolg/css/images/avatar.jpg" />
+            <h2 id="name">张吉成</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fas fa-map-marker-alt" style="padding-right: 5px"></i>Dalian, China</span>
+            <a id="follow" target="_blank" href="https://github.com/zhangjichengcc">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                13
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                10
+                <span>标签</span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-js构造函数" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="/bolg/2018/10/09/js构造函数/banner.jpg" class="article-banner" />
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            js构造函数
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/bolg/2018/10/09/js构造函数/">
+            <time datetime="2018-10-09T08:53:48.000Z" itemprop="datePublished">2018-10-09</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/bolg/categories/笔记/">笔记</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/bolg/tags/js/">js</a>
+    </div>
+
+                        </br>
+                        <span class="article-meta-readCount" id="busuanzi_container_page_pv">
+                           阅读量<span id="busuanzi_value_page_pv"></span>次
+                        </span>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#原型"><span class="toc-number">1.</span> <span class="toc-text">原型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES5继承方式"><span class="toc-number">2.</span> <span class="toc-text">ES5继承方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原型链继承"><span class="toc-number">2.1.</span> <span class="toc-text">原型链继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#借用构造函数"><span class="toc-number">2.2.</span> <span class="toc-text">借用构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组合继承"><span class="toc-number">2.3.</span> <span class="toc-text">组合继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#寄生组合继承"><span class="toc-number">2.4.</span> <span class="toc-text">寄生组合继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#寄生组合继承（简直完美）"><span class="toc-number">2.5.</span> <span class="toc-text">寄生组合继承（简直完美）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#附YUI库实现继承"><span class="toc-number">2.6.</span> <span class="toc-text">附YUI库实现继承</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6继承方式"><span class="toc-number">3.</span> <span class="toc-text">ES6继承方式</span></a></li></ol>
+                </div>
+            
+            <p>前言：上篇文章（发布在我的segmentfault上）介绍了js中通过构造函数来实例化对象的各种方法<a href="https://segmentfault.com/a/1190000015343232" target="_blank" rel="noopener">js构造函数</a>，这篇文章主要介绍构造函数的继承（类的继承），同样包括 ES5 和 ES6 两部分的介绍，能力所限，文中难免有不合理或错误的地方，还望批评指正~</p>
+<a id="more"></a>
+<h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><p>首先简单介绍一下实例属性/方法 和 原型属性/方法，以便更好理解下文</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Persion</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;                         <span class="comment">// 属性</span></span><br><span class="line">  <span class="keyword">this</span>.setName = <span class="function"><span class="keyword">function</span>(<span class="params">nameName</span>)</span>&#123;        <span class="comment">// 实例方法</span></span><br><span class="line">    <span class="keyword">this</span>.name = newName;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">Persion.prototype.sex = <span class="string">'man'</span>;              <span class="comment">// 向 Persion 原型中追加属性（原型方法）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> persion = <span class="keyword">new</span> Persion(<span class="string">'zhang'</span>);         <span class="comment">// 此时我们实例化一个persion对象，看一下name和sex有什么区别</span></span><br></pre></td></tr></table></figure>
+<p>通过 prototype 添加的属性将出现在实例对象的原型链中，</p>
+<blockquote>
+<p>每个对象都会有一个内置 <strong>proto</strong> 对象，当在当前对象中找不到属性的时候就会在其原型链中查找（即原型链）</p>
+</blockquote>
+<p>我们再来看下面的例子</p>
+<blockquote>
+<p><strong>注意</strong>：在构造函数中，一般很少有数组形式的引用属性，大部分情况都是：基本属性 + 方法。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">n</span>) </span>&#123;                      <span class="comment">// 声明一个构造函数</span></span><br><span class="line">  <span class="keyword">this</span>.name = n;             					    <span class="comment">// 实例属性</span></span><br><span class="line">  <span class="keyword">this</span>.arr = [];                          <span class="comment">// 实例属性（引用类型）</span></span><br><span class="line">  <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;                  <span class="comment">// 实例方法</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello world'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">  Animal.prototype.sing = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    <span class="comment">// 追加原型方法  </span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'吹呀吹呀，我的骄傲放纵~~'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Animal.prototype.pArr = [];               <span class="comment">// 追加原型属性（引用类型）</span></span><br></pre></td></tr></table></figure>
+<p>接下来我们看一下实例属性/方法 和 原型属性/方法的区别</p>
+<blockquote>
+<p>原型对象的用途是为每个实例对象存储共享的方法和属性，它仅仅是一个普通对象而已。并且所有的实例是共享同一个原型对象，因此有别于实例方法或属性，原型对象仅有一份。而实例有很多份，且实例属性和方法是独立的。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Animal(<span class="string">'cat'</span>);               <span class="comment">// 实例化cat对象</span></span><br><span class="line"><span class="keyword">var</span> dog = <span class="keyword">new</span> Animal(<span class="string">'dog'</span>);	             <span class="comment">// 实例化狗子对象</span></span><br><span class="line"></span><br><span class="line">cat.say === dog.say                        <span class="comment">// false 不同的实例拥有不同的实例属性/方法</span></span><br><span class="line">cat.sing === dog.sing                      <span class="comment">// true 不同的实例共享相同的原型属性/方法</span></span><br><span class="line"></span><br><span class="line">cat.arr.push(<span class="string">'zz'</span>);                        <span class="comment">// 向cat实例对象的arr中追加元素；（私有）</span></span><br><span class="line">cat.pArr.push(<span class="string">'xx'</span>);                       <span class="comment">// 向cat原型对象的pArr中追加元素；（共享）</span></span><br><span class="line"><span class="built_in">console</span>.log(dog.arr);                      <span class="comment">// 打印出 []，因为cat只改变了其私有的arr</span></span><br><span class="line"><span class="built_in">console</span>.log(dog.pArr);                             <span class="comment">// 打印出 ['xx'], 因为cat改变了与狗子（dog）共享的pArr</span></span><br></pre></td></tr></table></figure>
+<p>当然，原型属性为基本数据类型，则不会被共享<br>在构造函数中：为了属性(实例基本属性)的私有性、以及方法(实例引用属性)的复用、共享。我们提倡：<br>1、将属性封装在构造函数中<br>2、将方法定义在原型对象上</p>
+<h3 id="ES5继承方式"><a href="#ES5继承方式" class="headerlink" title="ES5继承方式"></a>ES5继承方式</h3><p>首先，我们定义一个Animal父类</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">n</span>) </span>&#123;          					</span><br><span class="line">  <span class="keyword">this</span>.name = n;                            <span class="comment">// 实例属性</span></span><br><span class="line">  <span class="keyword">this</span>.arr = [];                            <span class="comment">// 实例属性（引用类型）</span></span><br><span class="line">  <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;                    <span class="comment">// 实例方法</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello world'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">Animal.prototype.sing = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;        <span class="comment">// 追加原型方法  </span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'吹呀吹呀，我的骄傲放纵~~'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Animal.prototype.pArr = [];                 <span class="comment">// 追加原型属性（引用类型）</span></span><br></pre></td></tr></table></figure>
+<h4 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.cName = n;</span><br><span class="line">&#125;</span><br><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();                <span class="comment">// 父类的实例作为子类的原型对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> Cat(<span class="string">'tom'</span>);                    <span class="comment">// 此时Tom拥有Cat和Animal的所有实例和原型方法/属性，实现了继承</span></span><br><span class="line"><span class="keyword">var</span> black = <span class="keyword">new</span> Cat(<span class="string">'black'</span>);</span><br><span class="line"></span><br><span class="line">tom.arr.push(<span class="string">'Im tom'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(black.arr);                      <span class="comment">// 打印出 ['Im tom'], 结果其方法变成了共享的，而不是每个实例所私有的，这是因为父类的实例方法/属性变成了子类的原型方法/属性了；</span></span><br></pre></td></tr></table></figure>
+<p>优点: 实现了子对象对父对象的实例 方法/属性 和 原型方法/属性 的继承；<br>缺点: 子类实例共享了父类构造函数的引用数据类型属性。</p>
+<h4 id="借用构造函数"><a href="#借用构造函数" class="headerlink" title="借用构造函数"></a>借用构造函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.cName = n;                     </span><br><span class="line">  Animal.call(<span class="keyword">this</span>, <span class="keyword">this</span>.cName);             <span class="comment">// 核心，把父类的实例方法属性指向子类</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tom = <span class="keyword">new</span> Cat(<span class="string">'tom'</span>);                    <span class="comment">// 此时Tom拥有Cat和Animal的所有实例和原型方法/属性，实现了继承</span></span><br><span class="line"><span class="keyword">var</span> black = <span class="keyword">new</span> Cat(<span class="string">'black'</span>);</span><br><span class="line"></span><br><span class="line">tom.arr.push(<span class="string">'Im tom'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(black.arr);                      <span class="comment">// 打印出 [], 其方法和属性是每个子类实例所私有的；</span></span><br><span class="line">tom.sing();                                  <span class="comment">// undefind 无法继承父类的原型属性及方法；</span></span><br></pre></td></tr></table></figure>
+<p>优点:<br>1、实现了子对象对父对象的实例 方法/属性 的继承，每个子类实例所继承的父类实例方法和属性都是其私有的；<br>2、 创建子类实例，可以向父类构造函数传参数；<br>缺点: 子类实例不能继承父类的构造属性和方法；</p>
+<h4 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.cName = n;                     </span><br><span class="line">  Animal.call(<span class="keyword">this</span>, <span class="keyword">this</span>.cName);              <span class="comment">// 核心，把父类的实例方法属性指向子类</span></span><br><span class="line">&#125;</span><br><span class="line">Cat.prototype = <span class="keyword">new</span> Parent()                  <span class="comment">// 核心, 父类的实例作为子类的原型对象</span></span><br><span class="line">Cat.prototype.constructor = Cat;              <span class="comment">// 修复子类Cat的构造器指向，防止原型链的混乱</span></span><br><span class="line"></span><br><span class="line">tom.arr.push(<span class="string">'Im tom'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(black.arr);                       <span class="comment">// 打印出 [], 其方法和属性是每个子类实例所私有的；</span></span><br><span class="line">tom.sing();                                   <span class="comment">// 打印出 '吹呀吹呀，我的骄傲放纵~~'; 子类继承了父类的原型方法及属性</span></span><br></pre></td></tr></table></figure>
+<p>优点:<br>1、创建子类实例，可以向父类构造函数传参数；<br>2、父类的实例方法定义在父类的原型对象上，可以实现方法复用；<br>3、不共享父类的构造方法及属性；<br>缺点: 调用了2次父类的构造方法</p>
+<h4 id="寄生组合继承"><a href="#寄生组合继承" class="headerlink" title="寄生组合继承"></a>寄生组合继承</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.cName = n;                     </span><br><span class="line">  Animal.call(<span class="keyword">this</span>, <span class="keyword">this</span>.cName);                       <span class="comment">// 核心，把父类的实例方法属性指向子类</span></span><br><span class="line">&#125;</span><br><span class="line">Cat.prototype = Parent.prototype;                      <span class="comment">// 核心, 将父类原型赋值给子类原型（子类原型和父类原型，实质上是同一个）</span></span><br><span class="line">Cat.prototype.constructor = Cat;                       <span class="comment">// 修复子类Cat的构造器指向，防止原型链的混乱</span></span><br><span class="line"></span><br><span class="line">tom.arr.push(<span class="string">'Im tom'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(black.arr);                                <span class="comment">// 打印出 [], 其方法和属性是每个子类实例所私有的；</span></span><br><span class="line">tom.sing();                                            <span class="comment">// 打印出 '吹呀吹呀，我的骄傲放纵~~'; 子类继承了父类的原型方法及属性</span></span><br><span class="line">tom.pArr.push(<span class="string">'publish'</span>);                              <span class="comment">// 修改继承于父类原型属性值 pArr;</span></span><br><span class="line"><span class="built_in">console</span>.log(black.pArr);                               <span class="comment">// 打印出 ['publish'], 父类的原型属性/方法 依旧是共享的，</span></span><br><span class="line"><span class="comment">// 至此简直是完美呀~~~ 然鹅！</span></span><br><span class="line">Cat.prototype.childrenProp = <span class="string">'我是子类的原型属性！'</span>;</span><br><span class="line"><span class="keyword">var</span> parent = <span class="keyword">new</span> Animal(<span class="string">'父类'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(parent.childrenProp);                      <span class="comment">// 打印出'我是子类的原型属性！' what? 父类实例化的对象拥有子类的原型属性/方法，这是因为父类和子类使用了同一个原型</span></span><br></pre></td></tr></table></figure>
+<p>优点:<br>1、创建子类实例，可以向父类构造函数传参数；<br>2、子类的实例不共享父类的构造方法及属性；<br>3、只调用了1次父类的构造方法；<br>缺点: 父类和子类使用了同一个原型，导致子类的原型修改会影响父类；</p>
+<h4 id="寄生组合继承（简直完美）"><a href="#寄生组合继承（简直完美）" class="headerlink" title="寄生组合继承（简直完美）"></a>寄生组合继承（简直完美）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.cName = n;                     </span><br><span class="line">  Animal.call(<span class="keyword">this</span>, <span class="keyword">this</span>.cName);                        <span class="comment">// 核心，把父类的实例方法属性指向子类；</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;                                   <span class="comment">// 核心，利用空对象作为中介；</span></span><br><span class="line">F.prototype = Parent.prototype;                         <span class="comment">// 核心，将父类的原型赋值给空对象F；</span></span><br><span class="line">Cat.prototype = <span class="keyword">new</span> F();                                <span class="comment">// 核心，将F的实例赋值给子类；</span></span><br><span class="line">Cat.prototype.constructor = Cat;                        <span class="comment">// 修复子类Cat的构造器指向，防止原型链的混乱；</span></span><br><span class="line">tom.arr.push(<span class="string">'Im tom'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(black.arr);                                 <span class="comment">// 打印出 [], 其方法和属性是每个子类实例所私有的；</span></span><br><span class="line">tom.sing();                                             <span class="comment">// 打印出 '吹呀吹呀，我的骄傲放纵~~'; 子类继承了父类的原型方法及属性；</span></span><br><span class="line">tom.pArr.push(<span class="string">'publish'</span>);                               <span class="comment">// 修改继承于父类原型属性值 pArr；</span></span><br><span class="line"><span class="built_in">console</span>.log(black.pArr);                                <span class="comment">// 打印出 ['publish'], 父类的原型属性/方法 依旧是共享的；</span></span><br><span class="line">Cat.prototype.childrenProp = <span class="string">'我是子类的原型属性！'</span>;</span><br><span class="line"><span class="keyword">var</span> parent = <span class="keyword">new</span> Animal(<span class="string">'父类'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(parent.childrenProp);                       <span class="comment">// undefind  父类实例化的对象不拥有子类的原型属性/方法；</span></span><br></pre></td></tr></table></figure>
+<p>优点: 完美实现继承；<br>缺点:实现相对复杂</p>
+<h4 id="附YUI库实现继承"><a href="#附YUI库实现继承" class="headerlink" title="附YUI库实现继承"></a>附YUI库实现继承</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Child, Parent</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">  F.prototype = Parent.prototype;</span><br><span class="line">  hild.prototype = <span class="keyword">new</span> F();</span><br><span class="line">  Child.prototype.constructor = Child;</span><br><span class="line">  Child.uber = Parent.prototype;                          </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">extend(Cat,Animal);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>Child.uber = Parent.prototype;</code> 的意思是为子对象设一个uber属性，这个属性直接指向父对象的<code>prototype</code>属性。（uber是一个德语词，意思是”向上”、”上一层”。）这等于在子对象上打开一条通道，可以直接调用父对象的方法。这一行放在这里，只是为了实现继承的完备性，纯属备用性质。</p>
+</blockquote>
+<h3 id="ES6继承方式"><a href="#ES6继承方式" class="headerlink" title="ES6继承方式"></a>ES6继承方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;                             <span class="comment">// 父类</span></span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;                      <span class="comment">// 构造函数</span></span><br><span class="line">    <span class="keyword">this</span>.name=name;</span><br><span class="line">  &#125;</span><br><span class="line">  eat()&#123;                                  <span class="comment">// 实例方法</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello world'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;                 <span class="comment">// 子类</span></span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;</span><br><span class="line">    <span class="keyword">super</span>(name);                          <span class="comment">// 调用实现父类的构造函数</span></span><br><span class="line">    <span class="keyword">this</span>.pName = name;            </span><br><span class="line">  &#125;</span><br><span class="line">  sing()&#123;</span><br><span class="line"> 	 <span class="keyword">return</span> <span class="string">'吹呀吹呀，我的骄傲放纵~~'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        
+        </div>
+        
+            
+    
+        <section id="comments">
+    <h2 class="valine-title">
+        <i class="fas fa-write"></i>评论区
+        <span class="valine-title-info">（请完善信息用于邮件接收评论的反馈）</span>
+    </h2>
+    <div id="valine-thread"></div>
+</section>
+    
+
+        
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://zhangjichengcc.github.io/2018/10/09/js构造函数/" data-id="cjpmbx697000f4wujm07c0jtr" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/bolg/2018/10/10/Generator/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    ES6 Generator
+                
+            </div>
+        </a>
+    
+    
+        <a href="/bolg/2018/10/09/Promise/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">ES6 Promise</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="title">监听浏览器刷新及关闭6666</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/随笔/">随笔</a></p>
+                            <p class="item-date"><time datetime="2018-12-12T02:37:25.000Z" itemprop="datePublished">2018-12-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/bolg/2018/12/08/jenkins部署个人博客/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/bolg/2018/12/08/jenkins部署个人博客/jenkins.png)" alt="jenkins+github+hexo 部署个人博客" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/bolg/2018/12/08/jenkins部署个人博客/" class="title">jenkins+github+hexo 部署个人博客</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/随笔/">随笔</a></p>
+                            <p class="item-date"><time datetime="2018-12-08T07:26:12.000Z" itemprop="datePublished">2018-12-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/bolg/2018/11/29/HTTP状态码和AJAX状态值/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/bolg/2018/11/29/HTTP状态码和AJAX状态值/http.jpg)" alt="HTTP状态码和AJAX状态值hexo44" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/bolg/2018/11/29/HTTP状态码和AJAX状态值/" class="title">HTTP状态码和AJAX状态值hexo44</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/笔记/">笔记</a></p>
+                            <p class="item-date"><time datetime="2018-11-29T07:01:52.000Z" itemprop="datePublished">2018-11-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/bolg/2018/10/10/async/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2447683882,2644927629&amp;fm=26&amp;gp=0.jpg)" alt="ES6 async" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/bolg/2018/10/10/async/" class="title">ES6 async</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/笔记/">笔记</a></p>
+                            <p class="item-date"><time datetime="2018-10-10T09:18:18.000Z" itemprop="datePublished">2018-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/bolg/2018/10/10/Generator/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2447683882,2644927629&amp;fm=26&amp;gp=0.jpg)" alt="ES6 Generator" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/bolg/2018/10/10/Generator/" class="title">ES6 Generator</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/笔记/">笔记</a></p>
+                            <p class="item-date"><time datetime="2018-10-10T08:00:37.000Z" itemprop="datePublished">2018-10-10</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/娱乐/">娱乐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/工具/">工具</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/笔记/">笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/随笔/">随笔</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/10/">十月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/ES6/">ES6</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/LOL/">LOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/jenkins/">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/js/">js</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/video/">video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/前端/">前端</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/算法/">算法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/部署/">部署</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/bolg/tags/ES6/" style="font-size: 17.5px;">ES6</a> <a href="/bolg/tags/LOL/" style="font-size: 10px;">LOL</a> <a href="/bolg/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/bolg/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/bolg/tags/js/" style="font-size: 20px;">js</a> <a href="/bolg/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/bolg/tags/video/" style="font-size: 10px;">video</a> <a href="/bolg/tags/前端/" style="font-size: 20px;">前端</a> <a href="/bolg/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/bolg/tags/部署/" style="font-size: 10px;">部署</a>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fas fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 zhang jicheng
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+            <span id="busuanzi_container_site_uv"> 
+		  		访客数 <span id="busuanzi_value_site_uv"></span> 人/次
+			</span>
+            <br>
+            <!-- Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a> -->
+        </div>
+    </div>
+</footer>
+        
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!-- 用本地文件替换 -->
+    <script src="/bolg/js/Valine.min.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.6/dist/Valine.min.js"></script> -->
+    <script>
+        // import Valine from '../script/Valine.min.js'
+        new Valine({
+            el: '#valine-thread' ,
+            notify: 'true',
+            verify: 'true',
+            app_id: 'IJoreWFdARIhd1lJFJPHEVc8-gzGzoHsz',
+            app_key: 'FQediQbH6DWVsFKh3AaWNBMi',
+            placeholder: '我有话说~',
+            // avatar: 'mm',
+            // guest_info: 'nick, mail',
+            // pageSize: '10'
+        });
+    </script>
+
+
+
+
+    
+        <script src="/bolg/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/bolg/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/bolg/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/bolg/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/bolg/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/bolg/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/bolg/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/bolg/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/bolg/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/bolg/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/bolg/js/main.js"></script>
+
+    </div>
+</body>
+<!-- /* 引入不蒜子 访问量 */ -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</html>
