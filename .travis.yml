@@ -13,6 +13,7 @@ install:
   - npm install hexo-cli
   # - npm install hexo-deployer-git
 script:
+  - ls -l
   - echo 生成静态文件...
   - hexo clean  # 清除
   - hexo g  # 生成
@@ -20,6 +21,7 @@ script:
 after_script:
   - echo 开始部署...
   - cd ./public
+  - ls -l
   - git init
   - git config --global user.name "zhangjichengcc"  #修改name
   - git config --global user.email "zhangjichengcc@163.com"  #修改email
