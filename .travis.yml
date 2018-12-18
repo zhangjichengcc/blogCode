@@ -14,7 +14,6 @@ install:
 script:
   - hexo clean  # 清除
   - hexo g  # 生成
-  - hexo d  # 部署
 
 after_script:
   - echo 'ok'
@@ -25,11 +24,11 @@ after_script:
   - git config --global user.email "zhangjichengcc@163.com"  #修改email
   - git add ./
   - git commit -m "update"
-  - git push --force --quiet "https://${GH_Token}@${GH_REF}" master:bolg  #GH_TOKEN是在Travis中配置token的名稱
+  - git push --force --quiet "https://${GH_Token}@${GH_REF}" master:master  #GH_TOKEN是在Travis中配置token的名稱
 
 branches:
   only:
     - master #只監測blog-source分支，blog-source是我的博客源碼分支的名稱，可根據自己情況設置
 env:
   global:
-    - GH_REF: https://github.com/zhangjichengcc/bolg.git #設置GH_REF，注意更改yourname
+    - GH_REF: github.com/zhangjichengcc/bolg.git #設置GH_REF，注意更改yourname
