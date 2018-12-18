@@ -10,13 +10,15 @@ cache:
 install:
   - npm install hexo  #安裝hexo及插件
   - npm install hexo-cli
+  - npm install hexo-deployer-git
 script:
   - hexo clean  # 清除
   - hexo g  # 生成
   - hexo d  # 部署
 
 after_script:
-  - echo ok
+  - echo 'ok'
+  - dir
 #   - cd ./public
 #   - git init
 #   - git config --global user.name "alex1504"  #修改name
