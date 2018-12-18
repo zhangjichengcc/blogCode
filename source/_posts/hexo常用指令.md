@@ -49,6 +49,26 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 
 ### 文章发布
 hexo 支持在github等平台上一键发布
+注意： 经测试，该配置生效的条件为：
+1. github 项目名要为你自己的github名 如：yourname.github.io 
+2. github \_config.yml 文件的github配置如下
+``` bash
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://yourname.github.io                   # url地址
+root: /                                           # 根目录          
+permalink: :year/:month/:day/:title/              # 链接组合
+permalink_defaults:
+·
+·
+·
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy: # 配置发布
+  type: git
+  repository: git@github.com:yourname/yourname.github.io.git # 配置为ssh地址，https会失败
+  branch: master
+```
 
 ``` bash
 $ hexo deploy / $ hexo d

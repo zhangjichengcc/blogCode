@@ -17,8 +17,10 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 # url: http://yoursite.com
+# url: https://zhangjichengcc.github.io/blog        # url地址
 url: https://zhangjichengcc.github.io             # url地址
-root: /bolg/                                      # 根目录          
+# root: /bolg/                                      # 根目录          
+root: /                                           # 根目录          
 permalink: :year/:month/:day/:title/              # 链接组合
 permalink_defaults:
 
@@ -84,5 +86,5 @@ theme: icarus
 deploy: # 配置发布
   type: git
   # repository: https://github.com/zhangjichengcc/bolg.git
-  repository: https://github.com/zhangjichengcc/zhangjichengcc.github.io.git
+  repository: git@github:zhangjichengcc/zhangjichengcc.github.io.git
   branch: master
