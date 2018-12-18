@@ -32,4 +32,4 @@ branches:
     - master #只監測blog-source分支，blog-source是我的博客源碼分支的名稱，可根據自己情況設置
 env:
   global:
-    - GH_REF: https://github.com/zhangjichengcc/bolgCode.git  #設置GH_REF，注意更改yourname
+    - GH_REF: https://github.com/zhangjichengcc/zhangjichengcc.github.io.git #設置GH_REF，注意更改yourname
