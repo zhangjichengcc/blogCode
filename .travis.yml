@@ -19,13 +19,13 @@ script:
 after_script:
   - echo 'ok'
   - dir
-#   - cd ./public
-#   - git init
-#   - git config --global user.name "alex1504"  #修改name
-#   - git config --global user.email "alex1504@163.com"  #修改email
-#   - git add ./
-#   - git commit -m "update"
-#   - git push --force --quiet "https://${Travis_Token}@${GH_REF}" blog-source:master  #GH_TOKEN是在Travis中配置token的名稱
+  - cd ./public
+  - git init
+  - git config --global user.name "zhangjichengcc"  #修改name
+  - git config --global user.email "zhangjichengcc@163.com"  #修改email
+  - git add ./
+  - git commit -m "update"
+  - git push --force --quiet "https://${GH_Token}@${GH_REF}" blog:master  #GH_TOKEN是在Travis中配置token的名稱
 
 branches:
   only:
