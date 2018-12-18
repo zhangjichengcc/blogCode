@@ -9,7 +9,7 @@
 <meta name="keywords" content="前端,hexo,markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 创建文章 &amp; 文章缩略图及banner &amp; MarkDown">
-<meta property="og:url" content="https://zhangjichengcc.github.io/2018/02/27/hexo-创建文章/index.html">
+<meta property="og:url" content="https://zhangjichengcc.github.io/blog/2018/02/27/hexo-创建文章/index.html">
 <meta property="og:site_name" content="ZJC">
 <meta property="og:description" content="hexo 文章的创建及markdown语法">
 <meta property="og:locale" content="zh-CN">
@@ -168,7 +168,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                13
+                14
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -306,12 +306,12 @@
 <hr>
 <h2 id="文章缩略图和banner"><a href="#文章缩略图和banner" class="headerlink" title="文章缩略图和banner"></a>文章缩略图和banner</h2><p><strong>注： 不同主题设置可能不同，本部分只针icarus主题， 其他主题仅供参考</strong><br>当只设置 banner 时，文章的缩略图 和 banner 将都是 banner 所设置的图片；<br>当只设置 thumbnail 时， 文章只有缩略图，无banner<br>当同时设置 banner 和 thumbnail 时，banner 为 banner图，thumbnail 为缩略图， 两者各自生效；</p>
 <pre><code>设置图片前要在当前文章所在目录新建一个同名文件夹，用于存放图片等静态文件，如图；
-</code></pre><p><img src="/2018/02/27/hexo-创建文章/wenjian.jpg" alt="文件目录"><br>    或者修改配置文件_config.yml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span> <span class="comment"># 创建时生成静态资源文件夹</span></span><br></pre></td></tr></table></figure></p>
+</code></pre><p><img src="/blog/2018/02/27/hexo-创建文章/wenjian.jpg" alt="文件目录"><br>    或者修改配置文件_config.yml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span> <span class="comment"># 创建时生成静态资源文件夹</span></span><br></pre></td></tr></table></figure></p>
 <p>此时创建新文章时会自动在同级目录下生成同名文件夹用于存放静态文件，不同的主题可通过 thumbnail 和 banner 两个属性来设置缩略图和banner</p>
-<h3 id="文章缩略图设置："><a href="#文章缩略图设置：" class="headerlink" title="文章缩略图设置："></a>文章缩略图设置：</h3><p><img src="/2018/02/27/hexo-创建文章/suoluetu.png" alt="文章缩略图"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">...</span><br><span class="line">thumbnail: https://...        <span class="comment"># 此处为图片地址</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h3 id="文章缩略图设置："><a href="#文章缩略图设置：" class="headerlink" title="文章缩略图设置："></a>文章缩略图设置：</h3><p><img src="/blog/2018/02/27/hexo-创建文章/suoluetu.png" alt="文章缩略图"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">...</span><br><span class="line">thumbnail: https://...        <span class="comment"># 此处为图片地址</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h3 id="文章banner设置："><a href="#文章banner设置：" class="headerlink" title="文章banner设置："></a>文章banner设置：</h3><p><img src="/2018/02/27/hexo-创建文章/banner.jpg" alt="文章banner"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">...</span><br><span class="line">banner: https://...           <span class="comment"># 此处为图片地址</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p><strong><em>注： 若引用本地图片时，需要加上路径前缀，如下图：</em></strong><br><img src="/2018/02/27/hexo-创建文章/lujing.jpg" alt="路径"><br><img src="/2018/02/27/hexo-创建文章/lujing2.jpg" alt="目录"></p>
+<h3 id="文章banner设置："><a href="#文章banner设置：" class="headerlink" title="文章banner设置："></a>文章banner设置：</h3><p><img src="/blog/2018/02/27/hexo-创建文章/banner.jpg" alt="文章banner"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">...</span><br><span class="line">banner: https://...           <span class="comment"># 此处为图片地址</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p><strong><em>注： 若引用本地图片时，需要加上路径前缀，如下图：</em></strong><br><img src="/blog/2018/02/27/hexo-创建文章/lujing.jpg" alt="路径"><br><img src="/blog/2018/02/27/hexo-创建文章/lujing2.jpg" alt="目录"></p>
 <pre><code>则引用路径为：
 </code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">banner: /bolg/2018/09/27/hexo-创建文章/banner.jpg</span><br></pre></td></tr></table></figure>
 <hr>
@@ -416,7 +416,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/2018/02/27/hexo-创建文章/" data-id="cjpnuno3q000eqkujllr296iz" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/blog/2018/02/27/hexo-创建文章/" data-id="cjptmc6if0004a4uji3z4vqlz" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -525,6 +525,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/bolg/2018/12/17/GIT配置多账户/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/bolg/2018/12/17/GIT配置多账户/" class="title">GIT配置多账户</a></p>
+                            <p class="item-category"></p>
+                            <p class="item-date"><time datetime="2018-12-17T01:41:00.000Z" itemprop="datePublished">2018-12-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="thumbnail">
     
     
@@ -535,7 +554,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-title"><a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="title">监听浏览器刷新及关闭</a></p>
+                            <p class="item-title"><a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="title">监听浏览器刷新及关闭777</a></p>
                             <p class="item-category"><a class="article-category-link" href="/bolg/categories/随笔/">随笔</a></p>
                             <p class="item-date"><time datetime="2018-12-12T02:37:25.000Z" itemprop="datePublished">2018-12-12</time></p>
                         </div>
@@ -598,25 +617,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/bolg/2018/10/10/Generator/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2447683882,2644927629&amp;fm=26&amp;gp=0.jpg)" alt="ES6 Generator" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-title"><a href="/bolg/2018/10/10/Generator/" class="title">ES6 Generator</a></p>
-                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/笔记/">笔记</a></p>
-                            <p class="item-date"><time datetime="2018-10-10T08:00:37.000Z" itemprop="datePublished">2018-10-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -635,7 +635,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/10/">十月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/12/">十二月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/10/">十月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 

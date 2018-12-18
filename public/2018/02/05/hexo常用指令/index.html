@@ -9,12 +9,12 @@
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo常用指令">
-<meta property="og:url" content="https://zhangjichengcc.github.io/2018/02/05/hexo常用指令/index.html">
+<meta property="og:url" content="https://zhangjichengcc.github.io/blog/2018/02/05/hexo常用指令/index.html">
 <meta property="og:site_name" content="ZJC">
 <meta property="og:description" content="生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538053636652&di=0db3bc68fbdb79830a01281e006c9200&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3996696336%2C4120219149%26fm%3D214%26gp%3D0.jpg">
-<meta property="og:updated_time" content="2018-11-29T10:41:22.881Z">
+<meta property="og:updated_time" content="2018-12-14T10:34:04.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo常用指令">
 <meta name="twitter:description" content="生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。">
@@ -168,7 +168,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                13
+                14
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -248,7 +248,12 @@
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
 <h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate / $ hexo g           <span class="comment">#使用 Hexo 生成静态文件快速而且简单</span></span><br><span class="line">$ hexo generate --watch              <span class="comment">#监视文件变动</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h3><p>hexo 支持在github等平台上一键发布</p>
+<h3 id="文章发布"><a href="#文章发布" class="headerlink" title="文章发布"></a>文章发布</h3><p>hexo 支持在github等平台上一键发布<br>注意： 经测试，该配置生效的条件为：</p>
+<ol>
+<li>github 项目名要为你自己的github名 如：yourname.github.io </li>
+<li>github _config.yml 文件的github配置如下<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line">url: https://yourname.github.io                   <span class="comment"># url地址</span></span><br><span class="line">root: /                                           <span class="comment"># 根目录          </span></span><br><span class="line">permalink: :year/:month/:day/:title/              <span class="comment"># 链接组合</span></span><br><span class="line">permalink_defaults:</span><br><span class="line">·</span><br><span class="line">·</span><br><span class="line">·</span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy: <span class="comment"># 配置发布</span></span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:yourname/yourname.github.io.git <span class="comment"># 配置为ssh地址，https会失败</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy / $ hexo d</span><br></pre></td></tr></table></figure>
 <h3 id="清空缓存及静态文件"><a href="#清空缓存及静态文件" class="headerlink" title="清空缓存及静态文件"></a>清空缓存及静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
 <h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate --deploy / hexo g --d</span><br><span class="line">$ hexo deploy --generate / hexo d --g</span><br></pre></td></tr></table></figure>
@@ -340,7 +345,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/2018/02/05/hexo常用指令/" data-id="cjpnuno2z0008qkujcjk3dumv" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/blog/2018/02/05/hexo常用指令/" data-id="cjptmc6if0008a4ujyqs559pm" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -444,6 +449,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/bolg/2018/12/17/GIT配置多账户/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/bolg/2018/12/17/GIT配置多账户/" class="title">GIT配置多账户</a></p>
+                            <p class="item-category"></p>
+                            <p class="item-date"><time datetime="2018-12-17T01:41:00.000Z" itemprop="datePublished">2018-12-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="thumbnail">
     
     
@@ -454,7 +478,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-title"><a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="title">监听浏览器刷新及关闭</a></p>
+                            <p class="item-title"><a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="title">监听浏览器刷新及关闭777</a></p>
                             <p class="item-category"><a class="article-category-link" href="/bolg/categories/随笔/">随笔</a></p>
                             <p class="item-date"><time datetime="2018-12-12T02:37:25.000Z" itemprop="datePublished">2018-12-12</time></p>
                         </div>
@@ -517,25 +541,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/bolg/2018/10/10/Generator/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2447683882,2644927629&amp;fm=26&amp;gp=0.jpg)" alt="ES6 Generator" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-title"><a href="/bolg/2018/10/10/Generator/" class="title">ES6 Generator</a></p>
-                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/笔记/">笔记</a></p>
-                            <p class="item-date"><time datetime="2018-10-10T08:00:37.000Z" itemprop="datePublished">2018-10-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -554,7 +559,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/10/">十月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/12/">十二月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/10/">十月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/04/">四月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/bolg/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 

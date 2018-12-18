@@ -8,16 +8,17 @@ cache:
         - node_modules # 緩存不經常更改的內容
 
 install:
+  - echo 安装hexo相关环境...
   - npm install hexo  #安裝hexo及插件
   - npm install hexo-cli
-  - npm install hexo-deployer-git
+  # - npm install hexo-deployer-git
 script:
+  - echo 生成静态文件...
   - hexo clean  # 清除
   - hexo g  # 生成
 
 after_script:
-  - echo 'ok'
-  - dir
+  - echo 开始部署...
   - cd ./public
   - git init
   - git config --global user.name "zhangjichengcc"  #修改name
