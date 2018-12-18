@@ -1,0 +1,33 @@
+language: node_js  #設置語言
+
+node_js: stable  #設置相應的版本
+
+cache:
+    apt: true
+    directories:
+        - node_modules # 緩存不經常更改的內容
+
+install:
+  - npm install hexo  #安裝hexo及插件
+  - npm install hexo-cli
+script:
+  - hexo clean  # 清除
+  - hexo g  # 生成
+  - hexo d  # 部署
+
+after_script:
+  - echo ok
+#   - cd ./public
+#   - git init
+#   - git config --global user.name "alex1504"  #修改name
+#   - git config --global user.email "alex1504@163.com"  #修改email
+#   - git add ./
+#   - git commit -m "update"
+#   - git push --force --quiet "https://${Travis_Token}@${GH_REF}" blog-source:master  #GH_TOKEN是在Travis中配置token的名稱
+
+branches:
+  only:
+    - master #只監測blog-source分支，blog-source是我的博客源碼分支的名稱，可根據自己情況設置
+env:
+  global:
+    - GH_REF: https://github.com/zhangjichengcc/bolgCode.git  #設置GH_REF，注意更改yourname
