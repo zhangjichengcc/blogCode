@@ -12,7 +12,7 @@ install:
   - npm install hexo  #安裝hexo及插件
   - npm install hexo-cli
   - npm install hexo-generator-archive
-  # - npm install hexo-deployer-git
+  - npm install hexo-deployer-git
 script:
   - ls -l
   - echo 生成静态文件...
