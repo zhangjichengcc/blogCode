@@ -11,6 +11,7 @@ install:
   - echo 安装hexo相关环境...
   - npm install hexo  #安裝hexo及插件
   - npm install hexo-cli
+  - npm install hexo-generator-archive
   # - npm install hexo-deployer-git
 script:
   - ls -l
