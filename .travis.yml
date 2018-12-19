@@ -16,10 +16,11 @@ install:
   # - npm install hexo-generator-index
   # - npm install hexo-generator-category
   # - npm install hexo-generator-tag
+  - npm ls --depth 0
 script:
   - ls -l
   - echo 生成静态文件...
-  - hexo init
+  # - hexo init
   - hexo clean  # 清除
   - hexo g  # 生成
 
