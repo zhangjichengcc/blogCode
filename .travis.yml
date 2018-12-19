@@ -15,10 +15,6 @@ install:
   # - npm install hexo-generator-index
   # - npm install hexo-generator-category
   # - npm install hexo-generator-tag
-  # - npm install hexo-deployer-git
-  # - npm install hexo-deployer-git
-  # - npm install hexo-deployer-git
-  - npm install
 script:
   - ls -l
   - echo 生成静态文件...
