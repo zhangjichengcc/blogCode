@@ -13,7 +13,6 @@ install:
   # - cnpm install
   - npm install hexo  #安裝hexo及插件
   - npm install hexo-cli
-  - npm install hexo-generator
   # - npm install hexo-generator-index
   # - npm install hexo-generator-category
   # - npm install hexo-generator-tag
