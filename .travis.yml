@@ -19,10 +19,10 @@ install:
   # - npm install hexo-generator-tag
 script:
   - ls -l
-  - echo 生成静态文件...
+  # - echo 生成静态文件...
   # - hexo init
-  - hexo clean  # 清除
-  - hexo g  # 生成
+  # - hexo clean  # 清除
+  # - hexo g  # 生成
 
 after_script:
   - echo 开始部署...
