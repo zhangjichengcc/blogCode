@@ -4,6 +4,8 @@ date: 2018-02-05 14:29:09
 comments: true
 toc: true
 categories: "工具"
+tag:
+	- hexo
 banner: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538053636652&di=0db3bc68fbdb79830a01281e006c9200&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3996696336%2C4120219149%26fm%3D214%26gp%3D0.jpg
 tags:
     - hexo

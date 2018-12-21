@@ -4,10 +4,11 @@ date: 2018-02-27 14:29:09
 comments: true
 toc: true
 categories: "工具"
+tags: [hexo, markdown, 前端]
+
 thumbnail: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538137142415&di=6ea66fbfbb708b7280625217af646afb&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fvideo%2F08%2F086510262d86a381a52a3651174dbd4d.jpg
 <!-- banner: /bolg/2018/09/27/hexo-创建文章/banner.jpg -->
 
-tags: [hexo, markdown, 前端]
 ---
 
 hexo 文章的创建及markdown语法

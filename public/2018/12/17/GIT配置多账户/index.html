@@ -5,17 +5,20 @@
     
     <title>GIT配置多账户 | ZJC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+    <meta name="description" content="如今git作为当下最火的版本控制工具，基本开发人员都会有多个git账户，如gitlab，github及码云等都是基于git。那么如何在同一台设备上管理多个git账户呢？一种是不做ssh的配置，此时每次push操作都要输入用户名密码，还有一种则是配置ssh-key，本文介绍如何在window系统下托管多个ssk-key来管理git账号。">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GIT配置多账户">
 <meta property="og:url" content="https://zhangjichengcc.github.io/blog/2018/12/17/GIT配置多账户/index.html">
 <meta property="og:site_name" content="ZJC">
-<meta property="og:description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="如今git作为当下最火的版本控制工具，基本开发人员都会有多个git账户，如gitlab，github及码云等都是基于git。那么如何在同一台设备上管理多个git账户呢？一种是不做ssh的配置，此时每次push操作都要输入用户名密码，还有一种则是配置ssh-key，本文介绍如何在window系统下托管多个ssk-key来管理git账号。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-17T01:41:00.573Z">
+<meta property="og:image" content="https://zhangjichengcc.github.io/blog/2018/12/17/GIT配置多账户/hexo-创建文章/suoluetu.png">
+<meta property="og:updated_time" content="2018-12-21T07:12:50.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIT配置多账户">
-<meta name="twitter:description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:description" content="如今git作为当下最火的版本控制工具，基本开发人员都会有多个git账户，如gitlab，github及码云等都是基于git。那么如何在同一台设备上管理多个git账户呢？一种是不做ssh的配置，此时每次push操作都要输入用户名密码，还有一种则是配置ssh-key，本文介绍如何在window系统下托管多个ssk-key来管理git账号。">
+<meta name="twitter:image" content="https://zhangjichengcc.github.io/blog/2018/12/17/GIT配置多账户/hexo-创建文章/suoluetu.png">
     
 
     
@@ -169,7 +172,7 @@
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                10
+                11
                 <span>标签</span>
             </div>
         </div>
@@ -202,7 +205,17 @@
 
 
                         
+    <div class="article-category">
+    	<i class="fas fa-folder"></i>
+        <a class="article-category-link" href="/bolg/categories/随笔/">随笔</a>
+    </div>
+
                         
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/bolg/tags/git/">git</a>
+    </div>
+
                         <br>
                         <span class="article-meta-readCount" id="busuanzi_container_page_pv">
                            阅读量<span id="busuanzi_value_page_pv"></span>次
@@ -215,7 +228,18 @@
         <div class="article-entry" itemprop="articleBody">
         
             
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成ssh私钥公钥"><span class="toc-number">1.</span> <span class="toc-text">生成ssh私钥公钥</span></a></li></ol>
+                </div>
             
+            <blockquote>
+<p>如今git作为当下最火的版本控制工具，基本开发人员都会有多个git账户，如gitlab，github及码云等都是基于git。那么如何在同一台设备上管理多个git账户呢？一种是不做ssh的配置，此时每次push操作都要输入用户名密码，还有一种则是配置ssh-key，本文介绍如何在window系统下托管多个ssk-key来管理git账号。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="生成ssh私钥公钥"><a href="#生成ssh私钥公钥" class="headerlink" title="生成ssh私钥公钥"></a>生成ssh私钥公钥</h3><p>执行如下命令<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C email</span><br></pre></td></tr></table></figure></p>
+<p>如下图所示，根据你的email生成ssh并根据需要键入key名（最好是有含义的域名，如我的这个key用于github，则命名为id_res_github）<br><br><!-- ![文章banner](GIT配置多账户/git_1.jpg) --><br><img src="/blog/2018/12/17/GIT配置多账户/hexo-创建文章/suoluetu.png" alt="文章缩略图"></p>
+
         
         </div>
         
@@ -238,7 +262,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/blog/2018/12/17/GIT配置多账户/" data-id="cjpwdllri0003ekuj13pregk1" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/blog/2018/12/17/GIT配置多账户/" data-id="cjpxpb7ik0001n8ujiyusvv5f" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -316,7 +340,7 @@
     
         <a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">监听浏览器刷新及关闭777</div>
+            <div class="article-nav-title">监听浏览器刷新及关闭</div>
         </a>
     
 </nav>
@@ -349,7 +373,7 @@
                         
                         <div class="item-inner">
                             <p class="item-title"><a href="/bolg/2018/12/17/GIT配置多账户/" class="title">GIT配置多账户</a></p>
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/bolg/categories/随笔/">随笔</a></p>
                             <p class="item-date"><time datetime="2018-12-17T01:41:00.000Z" itemprop="datePublished">2018-12-17</time></p>
                         </div>
                     </li>
@@ -367,7 +391,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-title"><a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="title">监听浏览器刷新及关闭777</a></p>
+                            <p class="item-title"><a href="/bolg/2018/12/12/监听浏览器刷新及关闭/" class="title">监听浏览器刷新及关闭</a></p>
                             <p class="item-category"><a class="article-category-link" href="/bolg/categories/随笔/">随笔</a></p>
                             <p class="item-date"><time datetime="2018-12-12T02:37:25.000Z" itemprop="datePublished">2018-12-12</time></p>
                         </div>
@@ -439,7 +463,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/娱乐/">娱乐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/工具/">工具</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/笔记/">笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/随笔/">随笔</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/娱乐/">娱乐</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/工具/">工具</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/笔记/">笔记</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/bolg/categories/随笔/">随笔</a><span class="category-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -457,7 +481,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/ES6/">ES6</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/LOL/">LOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/jenkins/">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/js/">js</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/video/">video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/前端/">前端</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/算法/">算法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/部署/">部署</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/ES6/">ES6</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/LOL/">LOL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/jenkins/">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/js/">js</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/video/">video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/前端/">前端</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/算法/">算法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/bolg/tags/部署/">部署</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -466,7 +490,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/bolg/tags/ES6/" style="font-size: 17.5px;">ES6</a> <a href="/bolg/tags/LOL/" style="font-size: 10px;">LOL</a> <a href="/bolg/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/bolg/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/bolg/tags/js/" style="font-size: 20px;">js</a> <a href="/bolg/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/bolg/tags/video/" style="font-size: 10px;">video</a> <a href="/bolg/tags/前端/" style="font-size: 20px;">前端</a> <a href="/bolg/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/bolg/tags/部署/" style="font-size: 10px;">部署</a>
+            <a href="/bolg/tags/ES6/" style="font-size: 17.5px;">ES6</a> <a href="/bolg/tags/LOL/" style="font-size: 10px;">LOL</a> <a href="/bolg/tags/git/" style="font-size: 10px;">git</a> <a href="/bolg/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/bolg/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/bolg/tags/js/" style="font-size: 20px;">js</a> <a href="/bolg/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/bolg/tags/video/" style="font-size: 10px;">video</a> <a href="/bolg/tags/前端/" style="font-size: 20px;">前端</a> <a href="/bolg/tags/算法/" style="font-size: 12.5px;">算法</a> <a href="/bolg/tags/部署/" style="font-size: 10px;">部署</a>
         </div>
     </div>
 
