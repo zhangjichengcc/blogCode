@@ -3,6 +3,7 @@ title: GIT配置多账户
 date: 2018-12-17 09:41:00
 comments: true
 toc: true
+banner: /bolg/2018/12/17/GITduozhanghu/git_1.jpg
 categories: '随笔'
 tags:
 	- git
@@ -15,10 +16,26 @@ tags:
 ### 生成ssh私钥公钥
 
 执行如下命令
+sadf
+sadf
+asdf
+asdf
+asd
 ``` js
 ssh-keygen -t rsa -C email
 ```
 如下图所示，根据你的email生成ssh并根据需要键入key名（最好是有含义的域名，如我的这个key用于github，则命名为id_res_github）
-{% asset_img GIT配置多账户/git_1.jpg GIT配置多账户 %}
-<!-- ![文章banner](GIT配置多账户/git_1.jpg) -->
-![文章缩略图](hexo-创建文章/suoluetu.png)
+
+qq
+
+{% asset_img git_1.jpg GITduozhanghu %}
+
+qqqq
+
+![文章banner](git_1.jpg)
+
+
+aaaa
+
+
+### adsfasdf

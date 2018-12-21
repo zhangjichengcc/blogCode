@@ -19,7 +19,7 @@ timezone:
 # url: http://yoursite.com
 url: https://zhangjichengcc.github.io/blog        # url地址
 # url: https://zhangjichengcc.github.io             # url地址
-root: /bolg/                                      # 根目录          
+root: /blog/                                      # 根目录          
 # root: /                                           # 根目录          
 permalink: :year/:month/:day/:title/              # 链接组合
 permalink_defaults:
