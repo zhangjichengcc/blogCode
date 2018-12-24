@@ -7,7 +7,7 @@ categories: "工具"
 tags: [hexo, markdown, 前端]
 
 thumbnail: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538137142415&di=6ea66fbfbb708b7280625217af646afb&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fvideo%2F08%2F086510262d86a381a52a3651174dbd4d.jpg
-<!-- banner: /bolg/2018/09/27/hexo-创建文章/banner.jpg -->
+<!-- banner: /blog/2018/09/27/hexo-创建文章/banner.jpg -->
 
 ---
 
@@ -111,7 +111,7 @@ banner: https://...           # 此处为图片地址
 	
 	则引用路径为：
 ``` bash
-banner: /bolg/2018/09/27/hexo-创建文章/banner.jpg
+banner: /blog/2018/09/27/hexo-创建文章/banner.jpg
 ```
 
 ***
@@ -156,19 +156,19 @@ banner: /bolg/2018/09/27/hexo-创建文章/banner.jpg
 
 ### 超链接
 ``` bash
-行内形式：[我的博客](https://zhangjichengcc.github.io/bolg/)
+行内形式：[我的博客](https://zhangjichengcc.github.io/blog/)
 参考形式：[我的博客][1]，有一个很好的平台-[GitHub][2]
 [1]:https://kevinpu.github.io/
 [2]:http://www.jianshu.com/
-自动链接：我的博客地址<https://zhangjichengcc.github.io/bolg/>
+自动链接：我的博客地址<https://zhangjichengcc.github.io/blog/>
 ```
 	
 	效果
-行内形式：[我的博客](https://zhangjichengcc.github.io/bolg/)
+行内形式：[我的博客](https://zhangjichengcc.github.io/blog/)
 参考形式：[我的博客][1]，有一个很好的平台-[GitHub][2]
-[1]:https://zhangjichengcc.github.io/bolg/
+[1]:https://zhangjichengcc.github.io/blog/
 [2]:https://zhangjichengcc.github.io/
-自动链接：我的博客地址<https://zhangjichengcc.github.io/bolg/>
+自动链接：我的博客地址<https://zhangjichengcc.github.io/blog/>
 
 
 ***

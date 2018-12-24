@@ -3,7 +3,7 @@ title: 'js构造函数'
 date: 2018-10-09 16:53:48
 categories: '笔记'
 toc: true
-banner: /bolg/2018/10/09/js构造函数/banner.jpg
+banner: /blog/2018/10/09/js构造函数/banner.jpg
 tags:
 	- js
 ---

@@ -3,7 +3,7 @@ title: jenkins+github+hexo 部署个人博客
 date: 2018-12-08 15:26:12
 toc: true
 categories: '随笔'
-banner: /bolg/2018/12/08/jenkins部署个人博客/jenkins.png
+banner: /blog/2018/12/08/jenkins部署个人博客/jenkins.png
 tags:
 	- js
 	- 前端
