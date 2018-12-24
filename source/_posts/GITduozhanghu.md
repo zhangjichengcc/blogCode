@@ -26,16 +26,5 @@ ssh-keygen -t rsa -C email
 ```
 如下图所示，根据你的email生成ssh并根据需要键入key名（最好是有含义的域名，如我的这个key用于github，则命名为id_res_github）
 
-qq
-
-{% asset_img git_1.jpg GITduozhanghu %}
-
-qqqq
-
 ![文章banner](git_1.jpg)
 
-
-aaaa
-
-
-### adsfasdf
