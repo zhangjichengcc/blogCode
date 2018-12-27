@@ -14,7 +14,7 @@
 <meta property="og:description" content="hexo 文章的创建及markdown语法">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538137142415&di=6ea66fbfbb708b7280625217af646afb&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fvideo%2F08%2F086510262d86a381a52a3651174dbd4d.jpg">
-<meta property="og:updated_time" content="2018-12-21T03:05:56.057Z">
+<meta property="og:updated_time" content="2018-12-24T11:21:00.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 创建文章 &amp; 文章缩略图及banner &amp; MarkDown">
 <meta name="twitter:description" content="hexo 文章的创建及markdown语法">
@@ -313,7 +313,7 @@
 <h3 id="文章banner设置："><a href="#文章banner设置：" class="headerlink" title="文章banner设置："></a>文章banner设置：</h3><p><img src="/blog/2018/02/27/hexo-创建文章/banner.jpg" alt="文章banner"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">...</span><br><span class="line">banner: https://...           <span class="comment"># 此处为图片地址</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
 <p><strong><em>注： 若引用本地图片时，需要加上路径前缀，如下图：</em></strong><br><img src="/blog/2018/02/27/hexo-创建文章/lujing.jpg" alt="路径"><br><img src="/blog/2018/02/27/hexo-创建文章/lujing2.jpg" alt="目录"></p>
 <pre><code>则引用路径为：
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">banner: /bolg/2018/09/27/hexo-创建文章/banner.jpg</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">banner: /blog/2018/09/27/hexo-创建文章/banner.jpg</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="MarkDown-语法"><a href="#MarkDown-语法" class="headerlink" title="MarkDown 语法"></a>MarkDown 语法</h2><h3 id="斜体和粗体"><a href="#斜体和粗体" class="headerlink" title="斜体和粗体"></a>斜体和粗体</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*这是斜体* 或 _这也是斜体_ </span><br><span class="line">**这是粗体**</span><br><span class="line">***这是加粗斜体***</span><br><span class="line">~~这是删除线~~</span><br></pre></td></tr></table></figure>
 <pre><code>效果
@@ -328,9 +328,9 @@
 ##### 五级标题
 ###### 六级标题 -->
 <hr>
-<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">行内形式：[我的博客](https://zhangjichengcc.github.io/bolg/)</span><br><span class="line">参考形式：[我的博客][1]，有一个很好的平台-[GitHub][2]</span><br><span class="line">[1]:https://kevinpu.github.io/</span><br><span class="line">[2]:http://www.jianshu.com/</span><br><span class="line">自动链接：我的博客地址&lt;https://zhangjichengcc.github.io/bolg/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">行内形式：[我的博客](https://zhangjichengcc.github.io/blog/)</span><br><span class="line">参考形式：[我的博客][1]，有一个很好的平台-[GitHub][2]</span><br><span class="line">[1]:https://kevinpu.github.io/</span><br><span class="line">[2]:http://www.jianshu.com/</span><br><span class="line">自动链接：我的博客地址&lt;https://zhangjichengcc.github.io/blog/&gt;</span><br></pre></td></tr></table></figure>
 <pre><code>效果
-</code></pre><p>行内形式：<a href="https://zhangjichengcc.github.io/bolg/">我的博客</a><br>参考形式：[我的博客][1]，有一个很好的平台-[GitHub][2]<br>[1]:<a href="https://zhangjichengcc.github.io/bolg/">https://zhangjichengcc.github.io/bolg/</a><br>[2]:<a href="https://zhangjichengcc.github.io/">https://zhangjichengcc.github.io/</a><br>自动链接：我的博客地址<a href="https://zhangjichengcc.github.io/bolg/">https://zhangjichengcc.github.io/bolg/</a></p>
+</code></pre><p>行内形式：<a href="https://zhangjichengcc.github.io/blog/">我的博客</a><br>参考形式：[我的博客][1]，有一个很好的平台-[GitHub][2]<br>[1]:<a href="https://zhangjichengcc.github.io/blog/">https://zhangjichengcc.github.io/blog/</a><br>[2]:<a href="https://zhangjichengcc.github.io/">https://zhangjichengcc.github.io/</a><br>自动链接：我的博客地址<a href="https://zhangjichengcc.github.io/blog/">https://zhangjichengcc.github.io/blog/</a></p>
 <hr>
 <h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h4 id="无序列表："><a href="#无序列表：" class="headerlink" title="无序列表："></a>无序列表：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 无序列表项1</span><br><span class="line">+ 无序列表项2</span><br><span class="line">- 无序列表项3</span><br></pre></td></tr></table></figure>
 <pre><code>效果
@@ -416,7 +416,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/blog/2018/02/27/hexo-创建文章/" data-id="cjq283yuf0009ysujjr3qcxws" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/blog/2018/02/27/hexo-创建文章/" data-id="cjq62a8tv000a8sujxfrcs9qu" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -566,7 +566,7 @@
                             <a href="/blog/2018/12/08/jenkins部署个人博客/" class="thumbnail">
     
     
-        <span style="background-image:url(/bolg/2018/12/08/jenkins部署个人博客/jenkins.png)" alt="jenkins+github+hexo 部署个人博客" class="thumbnail-image"></span>
+        <span style="background-image:url(/blog/2018/12/08/jenkins部署个人博客/jenkins.png)" alt="jenkins+github+hexo 部署个人博客" class="thumbnail-image"></span>
     
 </a>
 
@@ -585,7 +585,7 @@
                             <a href="/blog/2018/11/29/HTTP状态码和AJAX状态值/" class="thumbnail">
     
     
-        <span style="background-image:url(/bolg/2018/11/29/HTTP状态码和AJAX状态值/http.jpg)" alt="HTTP状态码和AJAX状态值hexo44" class="thumbnail-image"></span>
+        <span style="background-image:url(/blog/2018/11/29/HTTP状态码和AJAX状态值/http.jpg)" alt="HTTP状态码和AJAX状态值hexo44" class="thumbnail-image"></span>
     
 </a>
 
@@ -680,7 +680,7 @@
     
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
     <!-- 用本地文件替换 -->
-    <script src="/bolg/js/Valine.min.js"></script>
+    <script src="/blog/js/Valine.min.js"></script>
     <!-- <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.6/dist/Valine.min.js"></script> -->
     <script>
         // import Valine from '../script/Valine.min.js'
