@@ -1,1 +1,1 @@
-build:passing
+[![](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)](https://zhangjichengcc.github.io/blog/)
