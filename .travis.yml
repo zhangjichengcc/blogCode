@@ -1,5 +1,5 @@
 language: node_js  #設置語言
-version: v1.0
+
 node_js: stable  #設置相應的版本
 
 cache:
