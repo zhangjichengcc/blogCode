@@ -3,18 +3,22 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     
-    <title>归档: 2018/4 | ZJC</title>
+    <title>Travis CI + github + hexo 自动化部署 | ZJC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZJC">
-<meta property="og:url" content="https://zhangjichengcc.github.io/blog/archives/2018/04/index.html">
+    <meta name="description" content="Travis CI是目前新兴的开源持续集成构建项目，采用yaml格式，简洁清新独树一帜。目前大多数的github项目都已经移入到Travis CI的构建队列中。Travis-CI会同步你在GitHub上托管的项目，每当你commit push成功之后，就可以根据配置文件进行项目的构建发布。   本博客最开始采用手动部署，后来采用jenkins部署，但是配置步骤相对繁琐，后来发现了Travis C">
+<meta name="keywords" content="git,hexo,Travis,部署">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Travis CI + github + hexo 自动化部署">
+<meta property="og:url" content="https://zhangjichengcc.github.io/blog/2019/01/03/TravisCI-hexo自动化部署/index.html">
 <meta property="og:site_name" content="ZJC">
-<meta property="og:description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+<meta property="og:description" content="Travis CI是目前新兴的开源持续集成构建项目，采用yaml格式，简洁清新独树一帜。目前大多数的github项目都已经移入到Travis CI的构建队列中。Travis-CI会同步你在GitHub上托管的项目，每当你commit push成功之后，就可以根据配置文件进行项目的构建发布。   本博客最开始采用手动部署，后来采用jenkins部署，但是配置步骤相对繁琐，后来发现了Travis C">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zhangjichengcc.github.io/blog/2019/01/03/TravisCI-hexo自动化部署/banner.jpg">
+<meta property="og:updated_time" content="2019-01-03T11:22:39.358Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZJC">
-<meta name="twitter:description" content="Zhangjicheng个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+<meta name="twitter:title" content="Travis CI + github + hexo 自动化部署">
+<meta name="twitter:description" content="Travis CI是目前新兴的开源持续集成构建项目，采用yaml格式，简洁清新独树一帜。目前大多数的github项目都已经移入到Travis CI的构建队列中。Travis-CI会同步你在GitHub上托管的项目，每当你commit push成功之后，就可以根据配置文件进行项目的构建发布。   本博客最开始采用手动部署，后来采用jenkins部署，但是配置步骤相对繁琐，后来发现了Travis C">
+<meta name="twitter:image" content="https://zhangjichengcc.github.io/blog/2019/01/03/TravisCI-hexo自动化部署/banner.jpg">
     
 
     
@@ -177,86 +181,202 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fas fa-calendar-alt"></i></span>
-                <h1 class="title">2018</h1>
-            </div>
+            <section id="main"><article id="post-TravisCI-hexo自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            
+	
+		<img src="/blog/2019/01/03/TravisCI-hexo自动化部署/banner.jpg" class="article-banner">
+	
+
+
+
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/blog/2018/04/08/递归尾调用优化/">递归尾调用优化</a>
+        <h1 class="article-title" itemprop="name">
+            Travis CI + github + hexo 自动化部署
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
-        <a href="/blog/2018/04/08/递归尾调用优化/">
-            <time datetime="2018-04-08T09:19:48.000Z" itemprop="datePublished">2018-04-08</time>
+        <a href="/blog/2019/01/03/TravisCI-hexo自动化部署/">
+            <time datetime="2019-01-03T02:18:38.000Z" itemprop="datePublished">2019-01-03</time>
         </a>
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/blog/categories/笔记/">笔记</a>
+        <a class="article-category-link" href="/blog/categories/随笔/">随笔</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/ES6/">ES6</a>, <a class="tag-link" href="/blog/tags/js/">js</a>, <a class="tag-link" href="/blog/tags/前端/">前端</a>, <a class="tag-link" href="/blog/tags/算法/">算法</a>
+        <a class="tag-link" href="/blog/tags/Travis/">Travis</a>, <a class="tag-link" href="/blog/tags/git/">git</a>, <a class="tag-link" href="/blog/tags/hexo/">hexo</a>, <a class="tag-link" href="/blog/tags/部署/">部署</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                        <br>
+                        <span class="article-meta-readCount" id="busuanzi_container_page_pv">
+                           阅读量<span id="busuanzi_value_page_pv"></span>次
+                        </span>
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/blog/2018/04/08/递归树结构解析/">递归树结构解析</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/blog/2018/04/08/递归树结构解析/">
-            <time datetime="2018-04-08T03:40:07.000Z" itemprop="datePublished">2018-04-08</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fas fa-folder"></i>
-        <a class="article-category-link" href="/blog/categories/笔记/">笔记</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/js/">js</a>, <a class="tag-link" href="/blog/tags/前端/">前端</a>, <a class="tag-link" href="/blog/tags/算法/">算法</a>
-    </div>
-
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注册配置-Travis"><span class="toc-number">1.</span> <span class="toc-text">注册配置 Travis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加-travis-yml"><span class="toc-number">2.</span> <span class="toc-text">添加 .travis.yml</span></a></li></ol>
                 </div>
-            </div>
+            
+            <blockquote>
+<p><a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a>是目前新兴的开源持续集成构建项目，采用<code>yaml</code>格式，简洁清新独树一帜。目前大多数的github项目都已经移入到Travis CI的构建队列中。Travis-CI会同步你在GitHub上托管的项目，每当你<code>commit</code> <code>push</code>成功之后，就可以根据配置文件进行项目的构建发布。</p>
+</blockquote>
+<blockquote>
+<p>本博客最开始采用手动部署，后来采用jenkins部署，但是配置步骤相对繁琐，后来发现了Travis CI，基于github刚好符合我的需求，并且配置起来十分方便，本文记录了配置Travis的全过程，构建步骤为：</p>
+<ol>
+<li>本地开发完成，提交代码到github仓库;</li>
+<li>github收到提交的更新，通知Travis;</li>
+<li>Travis 收到github的提交通知，进行构建;</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<p>hexo 的安装使用本文就不做介绍了，可以参考之前的文章<a href="https://zhangjichengcc.github.io/blog/2018/02/05/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">hexo常用命令</a>,<a href="https://zhangjichengcc.github.io/blog/2018/02/27/hexo-%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0/">hexo 创建文章 &amp; 文章缩略图及banner &amp; MarkDown
+</a></p>
+<p><a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a><br><img src="https://img.shields.io/badge/version-v1.0-green.svg" alt=""><br><img src="http://progressed.io/bar/91?title=done" alt=""><br><img src="http://progressed.io/bar/99" alt=""></p>
+<h2 id="注册配置-Travis"><a href="#注册配置-Travis" class="headerlink" title="注册配置 Travis"></a>注册配置 Travis</h2><ol>
+<li>打开<a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a>官网，进行注册，这里就不做太多赘述，推荐用github账户注册；</li>
+</ol>
+<p><img src="/blog/2019/01/03/TravisCI-hexo自动化部署/travis.jpg" alt="Travis CI注册"></p>
+<ol start="2">
+<li>绑定你的github账户，此时Travis会同步你的github仓库，将你要监听的github仓库名选中，此时Travis会监听该仓库的push操作，并执行指定的脚本文件；</li>
+</ol>
+<p><img src="/blog/2019/01/03/TravisCI-hexo自动化部署/travis2.jpg" alt="Travis CI设置"></p>
+<h2 id="添加-travis-yml"><a href="#添加-travis-yml" class="headerlink" title="添加 .travis.yml"></a>添加 .travis.yml</h2><p>当我们提交代码后执行的一系列操作都是在 .travis.yml文件中配置的；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">language: node_js  <span class="comment">#設置語言</span></span><br><span class="line">node_js: stable  <span class="comment">#設置相應的版本</span></span><br><span class="line">cache:</span><br><span class="line">    apt: <span class="literal">true</span></span><br><span class="line">    directories:</span><br><span class="line">        - node_modules <span class="comment"># 緩存不經常更改的內容</span></span><br><span class="line">install:</span><br><span class="line">  <span class="comment"># 执行安装操作</span></span><br><span class="line">  ...</span><br><span class="line">script:</span><br><span class="line">  <span class="comment"># 开始部署</span></span><br><span class="line">  ...</span><br><span class="line">after_script:</span><br><span class="line">  <span class="comment"># 部署后操作</span></span><br><span class="line">  ...</span><br><span class="line">branches:</span><br><span class="line">  <span class="comment"># 配置监听的分支</span></span><br><span class="line">  only:</span><br><span class="line">    - master <span class="comment">#只監測master分支，master是我的博客源碼分支的名稱，可根據自己情況設置</span></span><br><span class="line">env:</span><br><span class="line">  <span class="comment"># 环境变量配置</span></span><br><span class="line">  global:</span><br><span class="line">    - GH_REF: github.com/***/blog.git <span class="comment">#設置GH_REF，注意更改***</span></span><br></pre></td></tr></table></figure>
+<p>更详细的参数配置可以参考官网<br>如下是我的配置信息:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">language: node_js  <span class="comment">#設置語言</span></span><br><span class="line"></span><br><span class="line">node_js: stable  <span class="comment">#設置相應的版本</span></span><br><span class="line"></span><br><span class="line">cache:</span><br><span class="line">    apt: <span class="literal">true</span></span><br><span class="line">    directories:</span><br><span class="line">        - node_modules <span class="comment"># 緩存不經常更改的內容</span></span><br><span class="line"></span><br><span class="line">install:</span><br><span class="line">  - <span class="built_in">echo</span> 安装hexo相关环境...</span><br><span class="line">  - npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">  - cnpm install</span><br><span class="line">script:</span><br><span class="line">  - hexo clean</span><br><span class="line">  - hexo g</span><br><span class="line">  - ls -l</span><br><span class="line">after_script:</span><br><span class="line">  - <span class="built_in">echo</span> 开始部署...</span><br><span class="line">  - <span class="built_in">cd</span> ./public</span><br><span class="line">  - git init</span><br><span class="line">  - git config --global user.name <span class="string">"yourname"</span>  <span class="comment">#修改name</span></span><br><span class="line">  - git config --global user.email <span class="string">"youremail"</span>  <span class="comment">#修改email</span></span><br><span class="line">  - git add ./</span><br><span class="line">  - git commit -m <span class="string">"update"</span></span><br><span class="line">  - git push --force --quiet <span class="string">"https://<span class="variable">$&#123;GH_TOKEN&#125;</span>@<span class="variable">$&#123;GH_REF&#125;</span>"</span> master:master  <span class="comment">#GH_TOKEN是在Travis中配置token的名稱</span></span><br><span class="line">  - <span class="built_in">echo</span> 部署完成！</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - master <span class="comment">#只監測master分支，master是我的博客源碼分支的名稱，可根據自己情況設置</span></span><br><span class="line">env:</span><br><span class="line">  global:</span><br><span class="line">    - GH_REF: github.com/yourname/bolg.git <span class="comment">#設置GH_REF，注意更改yourname</span></span><br></pre></td></tr></table></figure></p>
+<p>## </p>
+
+        
         </div>
+        
+            
     
+        <section id="comments">
+    <h2 class="valine-title">
+        <i class="fas fa-write"></i>评论区
+        <span class="valine-title-info">（请完善信息用于邮件接收评论的反馈）</span>
+    </h2>
+    <div id="valine-thread"></div>
+</section>
+    
+
+        
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="https://zhangjichengcc.github.io/blog/2019/01/03/TravisCI-hexo自动化部署/" data-id="cjqgiujt10002a4uj655l3r12" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/blog/2019/01/02/GIT多账户/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">GIT配置多账户</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
 </section>
             
                 
