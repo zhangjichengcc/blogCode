@@ -1,3 +1,4 @@
 ![](https://img.shields.io/github/release-pre/qubyte/rubidium.svg)
 ![](https://img.shields.io/github/tag/expressjs/express.svg)
 ![](https://img.shields.io/github/release/zhangjicheng/bolgCode.svg)
+![](https://img.shields.io/github/manifest-json/v/zhangjicheng/blogCode.svg)
