@@ -104,4 +104,21 @@ env:
     - GH_REF: github.com/yourname/bolg.git #設置GH_REF，注意更改yourname
 ```
 
-## 
+---
+
+## 生成github access Token 并 配置到 Travis 
+>此步骤是为了使travis获得对github的操作权限，如`git push`等
+
+### 生成github access Token
+
+![github access Token](travis3.jpg)
+1. 如上图所示，登陆github并打开该页面，并新建token
+
+![github access Token](travis4.jpg)
+2. 如上图进行对应操作，生成token，注意token只显示一次，要保存好备用。
+
+### 配置access token 到Travis
+
+打开Travis CI 找到setting页面，填写对应的token名及上面步骤生成的token值，如下图
+![github access Token](travis5.jpg)
+
