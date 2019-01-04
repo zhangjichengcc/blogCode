@@ -12,8 +12,8 @@ before_install:
 
 install:
   # - npm install -g cnpm --registry=https://registry.npm.taobao.org
-  - cnpm install
-  
+  - npm install
+
 before_script:
   - echo 清空缓存静态文件
   - hexo clean  # 清除
