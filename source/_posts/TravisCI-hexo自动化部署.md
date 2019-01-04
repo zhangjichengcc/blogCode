@@ -23,11 +23,6 @@ tags:
 hexo 的安装使用本文就不做介绍了，可以参考之前的文章[hexo常用命令](https://zhangjichengcc.github.io/blog/2018/02/05/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/),[hexo 创建文章 & 文章缩略图及banner & MarkDown
 ](https://zhangjichengcc.github.io/blog/2018/02/27/hexo-%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0/)
 
-[Travis CI](https://travis-ci.org/)
-![](https://img.shields.io/badge/version-v1.0-green.svg)
-![](http://progressed.io/bar/91?title=done)
-![](http://progressed.io/bar/99)
-
 ## 注册配置 Travis
 1. 打开[Travis CI](https://travis-ci.org/)官网，进行注册，这里就不做太多赘述，推荐用github账户注册；
 
@@ -112,13 +107,49 @@ env:
 ### 生成github access Token
 
 ![github access Token](travis3.jpg)
+
 1. 如上图所示，登陆github并打开该页面，并新建token
 
 ![github access Token](travis4.jpg)
+
 2. 如上图进行对应操作，生成token，注意token只显示一次，要保存好备用。
 
-### 配置access token 到Travis
+### 配置 access token 到 Travis
 
-打开Travis CI 找到setting页面，填写对应的token名及上面步骤生成的token值，如下图
-![github access Token](travis5.jpg)
+打开Travis CI 找到setting页面，填写对应的token名及上面步骤生成的token值，如下图：
 
+![Token配置](travis5.jpg)
+
+细心的同学可能会发现我的 .travis.yml 文件中有下面这样一段配置
+
+``` bash
+after_script:
+  - echo 开始部署...
+  - cd ./public
+  - git init
+  - git config --global user.name "yourname"  #修改name
+  - git config --global user.email "youremail"  #修改email
+  - git add ./
+  - git commit -m "update"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master  #GH_TOKEN是在Travis中配置token的名稱
+  - echo 部署完成！
+branches:
+  only:
+    - master #只監測master分支，master是我的博客源碼分支的名稱，可根據自己情況設置
+env:
+  global:
+    - GH_REF: github.com/yourname/bolg.git #設置GH_REF，注意更改yourname
+```
+其中有两个变量，GH_REF是在env中配置的，而GH_TOKEN则是我们刚刚在设置中添加的github token，此时执行`git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master`命令就可以在不用输入用户名密码的情况下进行提交。
+
+---
+
+## 测试
+1. 提交代码到github中
+
+![代码提交](travis6.jpg)
+
+2. 查看部署情况
+![查看部署情况](travis7.jpg)
+
+![查看部署情况](travis8.jpg)

@@ -14,7 +14,7 @@
 <meta property="og:description" content="Travis CI是目前新兴的开源持续集成构建项目，采用yaml格式，简洁清新独树一帜。目前大多数的github项目都已经移入到Travis CI的构建队列中。Travis-CI会同步你在GitHub上托管的项目，每当你commit push成功之后，就可以根据配置文件进行项目的构建发布。   本博客最开始采用手动部署，后来采用jenkins部署，但是配置步骤相对繁琐，后来发现了Travis C">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://zhangjichengcc.github.io/blog/2019/01/03/TravisCI-hexo自动化部署/banner.jpg">
-<meta property="og:updated_time" content="2019-01-03T11:22:39.358Z">
+<meta property="og:updated_time" content="2019-01-04T07:39:29.816Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Travis CI + github + hexo 自动化部署">
 <meta name="twitter:description" content="Travis CI是目前新兴的开源持续集成构建项目，采用yaml格式，简洁清新独树一帜。目前大多数的github项目都已经移入到Travis CI的构建队列中。Travis-CI会同步你在GitHub上托管的项目，每当你commit push成功之后，就可以根据配置文件进行项目的构建发布。   本博客最开始采用手动部署，后来采用jenkins部署，但是配置步骤相对繁琐，后来发现了Travis C">
@@ -238,7 +238,7 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注册配置-Travis"><span class="toc-number">1.</span> <span class="toc-text">注册配置 Travis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加-travis-yml"><span class="toc-number">2.</span> <span class="toc-text">添加 .travis.yml</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注册配置-Travis"><span class="toc-number">1.</span> <span class="toc-text">注册配置 Travis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加-travis-yml"><span class="toc-number">2.</span> <span class="toc-text">添加 .travis.yml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成github-access-Token-并-配置到-Travis"><span class="toc-number">3.</span> <span class="toc-text">生成github access Token 并 配置到 Travis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成github-access-Token"><span class="toc-number">3.1.</span> <span class="toc-text">生成github access Token</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-access-token-到-Travis"><span class="toc-number">3.2.</span> <span class="toc-text">配置 access token 到 Travis</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number">4.</span> <span class="toc-text">测试</span></a></li></ol>
                 </div>
             
             <blockquote>
@@ -255,7 +255,6 @@
 <a id="more"></a>
 <p>hexo 的安装使用本文就不做介绍了，可以参考之前的文章<a href="https://zhangjichengcc.github.io/blog/2018/02/05/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">hexo常用命令</a>,<a href="https://zhangjichengcc.github.io/blog/2018/02/27/hexo-%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0/">hexo 创建文章 &amp; 文章缩略图及banner &amp; MarkDown
 </a></p>
-<p><a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a><br><img src="https://img.shields.io/badge/version-v1.0-green.svg" alt=""><br><img src="http://progressed.io/bar/91?title=done" alt=""><br><img src="http://progressed.io/bar/99" alt=""></p>
 <h2 id="注册配置-Travis"><a href="#注册配置-Travis" class="headerlink" title="注册配置 Travis"></a>注册配置 Travis</h2><ol>
 <li>打开<a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a>官网，进行注册，这里就不做太多赘述，推荐用github账户注册；</li>
 </ol>
@@ -267,7 +266,32 @@
 <h2 id="添加-travis-yml"><a href="#添加-travis-yml" class="headerlink" title="添加 .travis.yml"></a>添加 .travis.yml</h2><p>当我们提交代码后执行的一系列操作都是在 .travis.yml文件中配置的；</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">language: node_js  <span class="comment">#設置語言</span></span><br><span class="line">node_js: stable  <span class="comment">#設置相應的版本</span></span><br><span class="line">cache:</span><br><span class="line">    apt: <span class="literal">true</span></span><br><span class="line">    directories:</span><br><span class="line">        - node_modules <span class="comment"># 緩存不經常更改的內容</span></span><br><span class="line">install:</span><br><span class="line">  <span class="comment"># 执行安装操作</span></span><br><span class="line">  ...</span><br><span class="line">script:</span><br><span class="line">  <span class="comment"># 开始部署</span></span><br><span class="line">  ...</span><br><span class="line">after_script:</span><br><span class="line">  <span class="comment"># 部署后操作</span></span><br><span class="line">  ...</span><br><span class="line">branches:</span><br><span class="line">  <span class="comment"># 配置监听的分支</span></span><br><span class="line">  only:</span><br><span class="line">    - master <span class="comment">#只監測master分支，master是我的博客源碼分支的名稱，可根據自己情況設置</span></span><br><span class="line">env:</span><br><span class="line">  <span class="comment"># 环境变量配置</span></span><br><span class="line">  global:</span><br><span class="line">    - GH_REF: github.com/***/blog.git <span class="comment">#設置GH_REF，注意更改***</span></span><br></pre></td></tr></table></figure>
 <p>更详细的参数配置可以参考官网<br>如下是我的配置信息:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">language: node_js  <span class="comment">#設置語言</span></span><br><span class="line"></span><br><span class="line">node_js: stable  <span class="comment">#設置相應的版本</span></span><br><span class="line"></span><br><span class="line">cache:</span><br><span class="line">    apt: <span class="literal">true</span></span><br><span class="line">    directories:</span><br><span class="line">        - node_modules <span class="comment"># 緩存不經常更改的內容</span></span><br><span class="line"></span><br><span class="line">install:</span><br><span class="line">  - <span class="built_in">echo</span> 安装hexo相关环境...</span><br><span class="line">  - npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">  - cnpm install</span><br><span class="line">script:</span><br><span class="line">  - hexo clean</span><br><span class="line">  - hexo g</span><br><span class="line">  - ls -l</span><br><span class="line">after_script:</span><br><span class="line">  - <span class="built_in">echo</span> 开始部署...</span><br><span class="line">  - <span class="built_in">cd</span> ./public</span><br><span class="line">  - git init</span><br><span class="line">  - git config --global user.name <span class="string">"yourname"</span>  <span class="comment">#修改name</span></span><br><span class="line">  - git config --global user.email <span class="string">"youremail"</span>  <span class="comment">#修改email</span></span><br><span class="line">  - git add ./</span><br><span class="line">  - git commit -m <span class="string">"update"</span></span><br><span class="line">  - git push --force --quiet <span class="string">"https://<span class="variable">$&#123;GH_TOKEN&#125;</span>@<span class="variable">$&#123;GH_REF&#125;</span>"</span> master:master  <span class="comment">#GH_TOKEN是在Travis中配置token的名稱</span></span><br><span class="line">  - <span class="built_in">echo</span> 部署完成！</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - master <span class="comment">#只監測master分支，master是我的博客源碼分支的名稱，可根據自己情況設置</span></span><br><span class="line">env:</span><br><span class="line">  global:</span><br><span class="line">    - GH_REF: github.com/yourname/bolg.git <span class="comment">#設置GH_REF，注意更改yourname</span></span><br></pre></td></tr></table></figure></p>
-<p>## </p>
+<hr>
+<h2 id="生成github-access-Token-并-配置到-Travis"><a href="#生成github-access-Token-并-配置到-Travis" class="headerlink" title="生成github access Token 并 配置到 Travis"></a>生成github access Token 并 配置到 Travis</h2><blockquote>
+<p>此步骤是为了使travis获得对github的操作权限，如<code>git push</code>等</p>
+</blockquote>
+<h3 id="生成github-access-Token"><a href="#生成github-access-Token" class="headerlink" title="生成github access Token"></a>生成github access Token</h3><p><img src="/blog/2019/01/03/TravisCI-hexo自动化部署/travis3.jpg" alt="github access Token"></p>
+<ol>
+<li>如上图所示，登陆github并打开该页面，并新建token</li>
+</ol>
+<p><img src="/blog/2019/01/03/TravisCI-hexo自动化部署/travis4.jpg" alt="github access Token"></p>
+<ol start="2">
+<li>如上图进行对应操作，生成token，注意token只显示一次，要保存好备用。</li>
+</ol>
+<h3 id="配置-access-token-到-Travis"><a href="#配置-access-token-到-Travis" class="headerlink" title="配置 access token 到 Travis"></a>配置 access token 到 Travis</h3><p>打开Travis CI 找到setting页面，填写对应的token名及上面步骤生成的token值，如下图：</p>
+<p><img src="/blog/2019/01/03/TravisCI-hexo自动化部署/travis5.jpg" alt="Token配置"></p>
+<p>细心的同学可能会发现我的 .travis.yml 文件中有下面这样一段配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">after_script:</span><br><span class="line">  - <span class="built_in">echo</span> 开始部署...</span><br><span class="line">  - <span class="built_in">cd</span> ./public</span><br><span class="line">  - git init</span><br><span class="line">  - git config --global user.name <span class="string">"yourname"</span>  <span class="comment">#修改name</span></span><br><span class="line">  - git config --global user.email <span class="string">"youremail"</span>  <span class="comment">#修改email</span></span><br><span class="line">  - git add ./</span><br><span class="line">  - git commit -m <span class="string">"update"</span></span><br><span class="line">  - git push --force --quiet <span class="string">"https://<span class="variable">$&#123;GH_TOKEN&#125;</span>@<span class="variable">$&#123;GH_REF&#125;</span>"</span> master:master  <span class="comment">#GH_TOKEN是在Travis中配置token的名稱</span></span><br><span class="line">  - <span class="built_in">echo</span> 部署完成！</span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - master <span class="comment">#只監測master分支，master是我的博客源碼分支的名稱，可根據自己情況設置</span></span><br><span class="line">env:</span><br><span class="line">  global:</span><br><span class="line">    - GH_REF: github.com/yourname/bolg.git <span class="comment">#設置GH_REF，注意更改yourname</span></span><br></pre></td></tr></table></figure>
+<p>其中有两个变量，GH_REF是在env中配置的，而GH_TOKEN则是我们刚刚在设置中添加的github token，此时执行<code>git push --force --quiet &quot;https://${GH_TOKEN}@${GH_REF}&quot; master:master</code>命令就可以在不用输入用户名密码的情况下进行提交。</p>
+<hr>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><ol>
+<li>提交代码到github中</li>
+</ol>
+<p><img src="/blog/2019/01/03/TravisCI-hexo自动化部署/travis6.jpg" alt="代码提交"></p>
+<ol start="2">
+<li>查看部署情况<br><img src="/blog/2019/01/03/TravisCI-hexo自动化部署/travis7.jpg" alt="查看部署情况"></li>
+</ol>
+<p><img src="/blog/2019/01/03/TravisCI-hexo自动化部署/travis8.jpg" alt="查看部署情况"></p>
 
         
         </div>
@@ -291,7 +315,7 @@
 
 </div>
 
-    <a data-url="https://zhangjichengcc.github.io/blog/2019/01/03/TravisCI-hexo自动化部署/" data-id="cjqgiujt10002a4uj655l3r12" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="https://zhangjichengcc.github.io/blog/2019/01/03/TravisCI-hexo自动化部署/" data-id="cjqhqdtzi00081cujz0iprouc" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
