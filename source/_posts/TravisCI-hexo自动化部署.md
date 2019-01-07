@@ -73,30 +73,42 @@ cache:
     directories:
         - node_modules # 緩存不經常更改的內容
 
-install:
+before_install:
   - echo 安装hexo相关环境...
-  - npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+install:
+  # - npm install -g cnpm --registry=https://registry.npm.taobao.org
   - cnpm install
-script:
-  - hexo clean
-  - hexo g
-  - ls -l
-after_script:
-  - echo 开始部署...
+
+before_script:
+  - echo 正在清空缓存静态文件...
+  - hexo clean                      # 清除缓存静态文件
+  - echo 正在生成静态文件...
+  - hexo g                          # 生成静态文件
   - cd ./public
+  - ls -l
+
+script:
+  - echo 开始部署...
   - git init
-  - git config --global user.name "yourname"  #修改name
-  - git config --global user.email "youremail"  #修改email
+  - git config --global user.name "${GH_username}"                          # 修改name
+  - git config --global user.email "${GH_useremail}"                        # 修改email
   - git add ./
   - git commit -m "update"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master  #GH_TOKEN是在Travis中配置token的名稱
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master  # GH_TOKEN是在Travis中配置token的名稱
+
+after_script:
   - echo 部署完成！
+
 branches:
   only:
-    - master #只監測master分支，master是我的博客源碼分支的名稱，可根據自己情況設置
+    - master                                                                # 只監測master分支，master是我的博客源碼分支的名稱，可根據自己情況設置
 env:
   global:
-    - GH_REF: github.com/yourname/bolg.git #設置GH_REF，注意更改yourname
+    - GH_REF: github.com/<prourl>                                           # 设置 github 项目仓库地址
+    - GH_username: <yourname>                                               # 设置 github 用户名           
+    - GH_useremail: <youremail>                                             # 设置 github 绑定邮箱地址
+
 ```
 
 ---

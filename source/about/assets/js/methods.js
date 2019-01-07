@@ -3,7 +3,9 @@ title: about.js
 show: false
 ---
 
-(function(){
-
+(function(window){
+	var showAbout = function(){
+		
+	}
 	console.log('asdfasfasfasdfasddf');
-}())
+}(window))
