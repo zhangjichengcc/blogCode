@@ -88,3 +88,11 @@ deploy: # 配置发布
   # repository: https://github.com/zhangjichengcc/bolg.git
   repository: git@github:zhangjichengcc/zhangjichengcc.github.io.git
   branch: master
+
+# Admin
+admin:
+  name: hexo
+  password: hey
+  secret: hey hexo
+  expire: 60*1
+  cors: http://localhost:3000
