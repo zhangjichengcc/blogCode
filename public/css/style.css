@@ -235,7 +235,7 @@ code {
   text-transform: uppercase;
 }
 #header,
-#profile .inner,
+#profile .inner .inner-user,
 .article-inner,
 #comments,
 .archive-article,
@@ -664,34 +664,37 @@ code {
 }
 #profile .inner {
   margin-top: 40px;
+  background: rgba(0,0,0,0);
+}
+#profile .inner .inner-user {
   background: #fff;
 }
-#profile .inner .base-info #avatar {
+#profile .inner .inner-user .base-info #avatar {
   display: block;
   margin: 10px auto 20px;
   width: 128px;
   height: 128px;
   border-radius: 50%;
 }
-#profile .inner .base-info #name,
-#profile .inner .base-info #title,
-#profile .inner .base-info #location {
+#profile .inner .inner-user .base-info #name,
+#profile .inner .inner-user .base-info #title,
+#profile .inner .inner-user .base-info #location {
   display: block;
   text-align: center;
 }
-#profile .inner .base-info #name {
+#profile .inner .inner-user .base-info #name {
   font-size: 20px;
   font-weight: 600;
 }
-#profile .inner .base-info #location {
+#profile .inner .inner-user .base-info #location {
   font-size: 12px;
   margin-top: 5px;
   color: #9a9ea3;
 }
-#profile .inner .base-info #location .fa {
+#profile .inner .inner-user .base-info #location .fa {
   margin-right: 5px;
 }
-#profile .inner .base-info #follow {
+#profile .inner .inner-user .base-info #follow {
   color: #fff;
   width: 150px;
   height: 40px;
@@ -707,7 +710,7 @@ code {
   -ms-transition: 0.2s ease;
   transition: 0.2s ease;
 }
-#profile .inner .base-info #follow:hover {
+#profile .inner .inner-user .base-info #follow:hover {
   background: #49c8fb;
 }
 #profile .inner .article-info {

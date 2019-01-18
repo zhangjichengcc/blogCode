@@ -27,6 +27,10 @@ customize:
     author_title: "Web Developer & Designer"
     location: Dalian, China
     follow: https://github.com/zhangjichengcc
+  advert:
+    enabled: true # Whether to show advert bar
+    fixed: true
+    image: css/images/advert.jpg
   highlight: monokai
   sidebar: right # sidebar position, options: left, right or leave it empty
   thumbnail: true # enable posts thumbnail, options: true, false

@@ -1,0 +1,35 @@
+#advert
+    // column(profile-column)
+    display: none
+    margin-bottom: block-margin
+    @media mq-normal
+        display: block
+    .inner
+        margin-top: block-margin
+        background: rgba(0,0,0,0)
+        .profile-inner
+            position: relative
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+            &:before, &:after
+                z-index: 1
+                content: ''
+                top: -20px
+                right: 10px
+                position: absolute
+                border-width: 10px
+                border-style: solid
+                border-color: transparent transparent white transparent
+            &:after
+                z-index: 0
+                border-color: transparent transparent color-border - #111 transparent
+
+    .anim-fade-in
+        animation-name: fadeIn
+        animation-fill-mode: both
+        animation-duration: .3s
+
+    @keyframes fadeIn
+        0%
+            opacity: 0
+        to
+            opacity: 1

@@ -1,0 +1,10 @@
+<% var advert = theme.customize.advert; %>
+<% if(advert) { %>
+<aside id="advert" class="<%= (advert.fixed ? 'advert-fixed' : '')  %>">
+    <div class="inner advert-inner">
+        <div class="inner-advert" style="background-image: url(<%= url_for(advert.image) %>)">
+            <p>广告位招租</p>
+        </div>
+    </div>
+    </aside>
+<% } %>
